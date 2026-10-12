@@ -1,0 +1,378 @@
+<title>Earshot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Familjen+Grotesk:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: a day replayed as a screenplay page (left) with the ledger and memory beside it (right); scorecard first. */
+:root {
+  --paper: #eef1f4; --sheet: #ffffff; --ink: #17202a; --muted: #5a6672; --rule: #d9dfe5;
+  --voice: #1f5bd0; --voice-soft: #e7eefc;
+  --hold: #8f6310; --hold-soft: #f7efdb;
+  --bad: #b93a2b; --bad-soft: #fbe8e5;
+  --good: #1c7449; --good-soft: #e1f2e8;
+  --ui: "Familjen Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --script: "Courier Prime", "Courier New", Courier, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0e1317; --sheet: #151c22; --ink: #e5eaee; --muted: #98a4ae; --rule: #29323a;
+    --voice: #86aaff; --voice-soft: #18233b; --hold: #dfb15e; --hold-soft: #2a2314;
+    --bad: #ff8b7b; --bad-soft: #391c18; --good: #74d4a3; --good-soft: #14281e; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0e1317; --sheet: #151c22; --ink: #e5eaee; --muted: #98a4ae; --rule: #29323a;
+  --voice: #86aaff; --voice-soft: #18233b; --hold: #dfb15e; --hold-soft: #2a2314;
+  --bad: #ff8b7b; --bad-soft: #391c18; --good: #74d4a3; --good-soft: #14281e; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--paper); color: var(--ink); font-family: var(--ui); font-size: 15px; line-height: 1.5; }
+.wrap { max-width: 1160px; margin: 0 auto; padding-inline: 20px; padding-block: 40px 64px; display: grid; gap: 40px; }
+h1, h2, h3 { margin: 0; text-wrap: balance; line-height: 1.15; }
+p { margin: 0; }
+.eyebrow { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+a { color: var(--voice); }
+button:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--voice); outline-offset: 2px; }
+
+/* header */
+header { display: grid; gap: 14px; max-width: 760px; }
+h1 { font-size: clamp(40px, 7vw, 64px); font-weight: 700; letter-spacing: -.03em; }
+h1 .ear { font-family: var(--script); font-weight: 400; font-size: .5em; letter-spacing: 0; color: var(--voice); vertical-align: .55em; margin-left: .25em; }
+.lede { font-size: 19px; max-width: 62ch; }
+.byline { color: var(--muted); font-size: 14px; }
+.byline code { font-family: var(--script); font-size: 13px; color: var(--ink); }
+
+/* scorecard */
+section { display: grid; gap: 16px; }
+.sec-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 24px; }
+h2 { font-size: 24px; font-weight: 600; letter-spacing: -.01em; }
+.note { color: var(--muted); font-size: 14px; max-width: 70ch; }
+.tablebox { overflow-x: auto; background: var(--sheet); border: 1px solid var(--rule); border-radius: 6px; }
+table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; font-size: 14px; }
+th, td { padding: 8px 12px; text-align: right; border-bottom: 1px solid var(--rule); white-space: nowrap; }
+th:first-child, td:first-child { text-align: left; }
+thead th { font-size: 12px; font-weight: 600; color: var(--muted); vertical-align: bottom; }
+thead .dayname { color: var(--ink); font-size: 13px; text-align: center; border-bottom: 0; }
+thead .ho { display: inline-block; margin-left: 6px; font-size: 11px; padding: 1px 6px; border-radius: 99px; background: var(--hold-soft); color: var(--hold); letter-spacing: .03em; }
+tbody tr:last-child td { border-bottom: 0; }
+td.better { color: var(--good); font-weight: 600; }
+td.worse { color: var(--bad); }
+td.split { border-left: 1px solid var(--rule); }
+.guard td:first-child::after { content: "guardrail"; margin-left: 8px; font-size: 10.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); border: 1px solid var(--rule); padding: 0 5px; border-radius: 3px; }
+
+.findings { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+.finding { background: var(--sheet); border: 1px solid var(--rule); border-radius: 6px; padding: 14px 16px; display: grid; gap: 6px; align-content: start; }
+.finding h3 { font-size: 15px; font-weight: 600; }
+.finding p { font-size: 14px; color: var(--muted); }
+.finding q { font-family: var(--script); font-size: 13.5px; color: var(--ink); quotes: none; }
+
+/* replay controls */
+.controls { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; }
+.seg { display: inline-flex; background: var(--sheet); border: 1px solid var(--rule); border-radius: 6px; padding: 3px; gap: 2px; flex-wrap: wrap; }
+.seg button { font: inherit; font-size: 14px; border: 0; background: transparent; color: var(--muted); padding: 6px 12px; border-radius: 4px; cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--sheet); }
+.seg button:hover:not([aria-pressed="true"]) { color: var(--ink); }
+
+.replay { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 24px; align-items: start; }
+@media (max-width: 900px) { .replay { grid-template-columns: minmax(0, 1fr); } }
+
+/* the script */
+.sheet { background: var(--sheet); border: 1px solid var(--rule); border-radius: 6px; padding-block: 28px; padding-inline: clamp(12px, 4vw, 40px); font-family: var(--script); font-size: 15px; line-height: 1.45; min-width: 0; }
+.slug { font-family: var(--script); font-weight: 700; text-transform: uppercase; margin: 22px 0 10px; display: flex; gap: 12px; align-items: center; }
+.slug:first-child { margin-top: 0; }
+.slug::after { content: ""; flex: 1; border-top: 1px dashed var(--rule); }
+.line { display: grid; grid-template-columns: 4.6em minmax(0, 1fr); gap: 0 10px; margin-bottom: 12px; }
+.t { color: var(--muted); font-size: 12.5px; padding-top: 2px; font-variant-numeric: tabular-nums; }
+.body { min-width: 0; }
+.cue { text-transform: uppercase; padding-left: min(22%, 9em); letter-spacing: .02em; }
+.dlg { padding-left: min(8%, 3em); padding-right: min(8%, 3em); overflow-wrap: anywhere; }
+.paren { padding-left: min(15%, 6em); font-style: italic; color: var(--muted); font-size: 14px; }
+.media .cue, .media .dlg { color: var(--muted); }
+.direction .body { font-style: italic; color: var(--muted); }
+.direction .body b { font-style: normal; font-weight: 700; color: var(--ink); }
+
+.whisper .cue { color: var(--voice); font-weight: 700; }
+.whisper .dlg { color: var(--voice); background: var(--voice-soft); border-radius: 4px; padding-block: 4px; margin-inline: min(8%, 3em); padding-inline: 10px; }
+.whisper.bad .dlg { background: var(--bad-soft); color: var(--bad); }
+.whisper .why { padding-left: min(8%, 3em); margin-top: 4px; }
+.why summary { cursor: pointer; font-style: italic; color: var(--muted); font-size: 13.5px; list-style: none; }
+.why summary::-webkit-details-marker { display: none; }
+.why summary::before { content: "+ "; }
+.why[open] summary::before { content: "\2212 "; }
+.why ol { margin: 6px 0 0; padding-left: 1.4em; font-size: 13px; color: var(--muted); display: grid; gap: 2px; }
+
+.held .body { color: var(--hold); font-style: italic; font-size: 14px; }
+.tag { display: inline-block; font-family: var(--ui); font-style: normal; font-size: 11.5px; line-height: 1.6; padding: 0 7px; border-radius: 99px; margin: 4px 6px 0 0; }
+.tag.open { background: var(--voice-soft); color: var(--voice); }
+.tag.closed { background: var(--good-soft); color: var(--good); }
+.tag.skip { background: var(--paper); color: var(--muted); border: 1px solid var(--rule); }
+.tag.priv { background: var(--hold-soft); color: var(--hold); }
+.tag.bad { background: var(--bad-soft); color: var(--bad); }
+.marks { padding-left: min(8%, 3em); }
+
+/* sidebar */
+aside { display: grid; gap: 16px; position: sticky; top: calc(env(safe-area-inset-top, 0px) + 16px); max-height: calc(100vh - 32px); overflow-y: auto; min-width: 0; }
+@media (max-width: 900px) { aside { position: static; max-height: none; } }
+.panel { background: var(--sheet); border: 1px solid var(--rule); border-radius: 6px; padding: 16px; display: grid; gap: 10px; }
+.panel h3 { font-size: 13px; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+.group { display: grid; gap: 8px; }
+.group + .group { border-top: 1px solid var(--rule); padding-top: 10px; }
+.group h4 { margin: 0; font-size: 13px; font-weight: 600; }
+.item { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 2px 8px; font-size: 13.5px; }
+.item .id { font-family: var(--script); font-size: 12px; color: var(--muted); padding-top: 1px; }
+.item .w { overflow-wrap: anywhere; }
+.item .w.closed { text-decoration: line-through; text-decoration-color: var(--muted); color: var(--muted); }
+.item .meta { grid-column: 2; font-size: 12px; color: var(--muted); }
+.empty { font-size: 13px; color: var(--muted); font-style: italic; }
+.mini { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 12px; font-size: 13px; font-variant-numeric: tabular-nums; }
+.mini .v { text-align: right; font-weight: 600; }
+.mini .v.good { color: var(--good); } .mini .v.bad { color: var(--bad); }
+
+footer { color: var(--muted); font-size: 13.5px; display: grid; gap: 6px; max-width: 75ch; }
+@media (max-width: 520px) {
+  .cue { padding-left: 0; } .dlg, .marks, .whisper .why { padding-left: 0; padding-right: 0; } .whisper .dlg { margin-inline: 0; }
+  .paren { padding-left: 0; } .line { grid-template-columns: 3.9em minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .whisper .dlg { transition: background-color .2s; }
+}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">A working proof of concept for Moonshot (YC S26)</div>
+    <h1>Earshot<span class="ear">(in ear)</span></h1>
+    <p class="lede">Samantha hears the whole day. Earshot is the layer that decides which words were promises, whose promises they were, what is too private to keep, and when it is polite to speak.</p>
+    <p class="byline">Built by Khushi Singhal. Python, no dependencies, 38 tests. Code: <code>github.com/khushisinghal21/earshot</code></p>
+  </header>
+
+  <section aria-labelledby="score-h">
+    <div class="sec-head">
+      <h2 id="score-h">Scorecard</h2>
+      <p class="note">Three hand-labelled days replayed through a keyword baseline and through Earshot. Days 1 and 2 were used while building. Day 3 was written and labelled first, then run once, untuned.</p>
+    </div>
+    <div class="tablebox"><table id="score"></table></div>
+  </section>
+
+  <section aria-labelledby="ho-h">
+    <div class="sec-head">
+      <h2 id="ho-h">What the held-out day shows</h2>
+      <p class="note">The guardrails are structural, so they held. The misses are all language understanding, which is where a model belongs. The repo has a model-backed extractor where the model proposes ledger changes and code enforces who said it and quotes the evidence.</p>
+    </div>
+    <div class="findings">
+      <div class="finding"><h3>Pronouns that point backwards</h3><p><q>can you handle it this time?</q> means the wifi bill from the sentence before. Rules filed "handle it this time".</p></div>
+      <div class="finding"><h3>Promises without "I'll"</h3><p><q>Need to remember to renew my passport</q> and <q>Sure, will do</q> to a request with no "can you" were both missed.</p></div>
+      <div class="finding"><h3>Paraphrased closure</h3><p><q>Collected the order</q> and <q>Kitchen's clean</q> didn't close their loops, so one whisper reminded about a bill already paid.</p></div>
+      <div class="finding"><h3>A wrong memory</h3><p><q>send me the photos from Neha's wedding</q> was stored as a fact about Neha. Privacy held, but precision didn't.</p></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="rp-h">
+    <div class="sec-head">
+      <h2 id="rp-h">Replay a day</h2>
+      <div class="controls">
+        <div class="seg" id="days" role="group" aria-label="Day"></div>
+        <div class="seg" id="modes" role="group" aria-label="Policy">
+          <button type="button" id="mode-earshot" data-mode="earshot" aria-pressed="true">Earshot</button>
+          <button type="button" id="mode-baseline" data-mode="baseline" aria-pressed="false">Baseline</button>
+        </div>
+      </div>
+    </div>
+    <p class="note" id="mode-note"></p>
+    <div class="replay">
+      <div class="sheet" id="script" aria-live="polite"></div>
+      <aside id="side"></aside>
+    </div>
+  </section>
+
+  <footer>
+    <p>How the timing works: the arbiter is causal. It knows who is talking right now and what has already been transcribed, never when the next person will start, so collisions are measured after the fact, the way they would happen in someone's ear.</p>
+    <p>Transcripts are synthetic and speaker labels are given, standing in for diarization and voiceprints. Run it yourself with <code style="font-family:var(--script)">python -m earshot eval</code>.</p>
+  </footer>
+</div>
+
+<script>
+const DATA = /*__EARSHOT_DATA__*/null;
+const GUARD = new Set(["misattributed", "privacy_leaks", "talk_over_person", "quiet_violations"]);
+const state = { day: 0, mode: "earshot" };
+
+function h(tag, attrs, ...kids) {
+  const el = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs || {})) {
+    if (k === "class") el.className = v; else if (k === "text") el.textContent = v; else el.setAttribute(k, v);
+  }
+  for (const k of kids.flat(Infinity)) if (k != null && k !== false) el.append(k.nodeType ? k : document.createTextNode(k));
+  return el;
+}
+function fmtMetric(key, v) {
+  if (v == null) return "–";
+  const pct = ["ledger_recall", "ledger_precision", "status_accuracy", "counterparty_accuracy", "mind_recall", "whisper_recall"];
+  return pct.includes(key) ? Math.round(v * 100) + "%" : String(v);
+}
+const cmp = (better, a, b) => a == null || b == null || a === b ? 0 : (better === "higher" ? (b > a ? 1 : -1) : (b < a ? 1 : -1));
+
+function scorecard() {
+  const t = document.getElementById("score");
+  const head1 = h("tr", {}, h("th", {}, ""), DATA.days.map((d, i) =>
+    h("th", { class: "dayname" + (i ? " split" : ""), colspan: "2" }, `Day ${i + 1}`, d.heldout ? h("span", { class: "ho" }, "held out") : null)));
+  const head2 = h("tr", {}, h("th", {}, "Metric"), DATA.days.map((d, i) => [h("th", { class: i ? "split" : "" }, "Baseline"), h("th", {}, "Earshot")]));
+  const rows = DATA.metrics.map(m => h("tr", { class: GUARD.has(m.key) ? "guard" : "" },
+    h("td", {}, m.label),
+    DATA.days.map((d, i) => {
+      const b = d.runs.baseline.score[m.key], e = d.runs.earshot.score[m.key];
+      const c = cmp(m.better, b, e);
+      return [h("td", { class: i ? "split" : "" }, fmtMetric(m.key, b)),
+              h("td", { class: c > 0 ? "better" : c < 0 ? "worse" : "" }, fmtMetric(m.key, e))];
+    })));
+  t.replaceChildren(h("thead", {}, head1, head2), h("tbody", {}, rows));
+}
+
+function clockToSec(c) { const [a, b, s] = c.split(":").map(Number); return a * 3600 + b * 60 + s; }
+
+function timeline(run) {
+  const items = [];
+  const skipBy = {}, privBy = {}, openBy = {};
+  run.skipped.forEach(s => (skipBy[s.segment] ||= []).push(s));
+  run.withheld.forEach(w => (privBy[w.source_segment] ||= []).push(w));
+  run.ledger.forEach(l => (openBy[l.source_segment] ||= []).push(l));
+  const factBy = {}; run.facts.forEach(f => (factBy[f.source_segment] ||= []).push(f));
+  run.segments.forEach(s => items.push({ at: s.start, k: "seg", s, marks: { skip: skipBy[s.id], priv: privBy[s.id], open: openBy[s.id], fact: factBy[s.id] } }));
+  run.events.forEach(e => items.push({ at: e.at, k: "ev", e }));
+  run.decisions.forEach(d => items.push({ at: d.at, k: "dec", d }));
+  run.ledger.filter(l => l.closed_at != null).forEach(l => items.push({ at: l.closed_at + 0.01, k: "close", l }));
+  return items.sort((a, b) => a.at - b.at);
+}
+
+const EVENT_TEXT = {
+  focus_on: () => [h("b", {}, "Focus on."), " Your phone is in Do Not Disturb."],
+  focus_off: () => [h("b", {}, "Focus off.")],
+  pause_listening: () => [h("b", {}, "Listening paused"), " by a tap on the earpiece."],
+  resume_listening: () => [h("b", {}, "Listening resumed.")],
+  calendar_change: e => [h("b", {}, "Calendar: "), `${e.data.title} moves to ${e.data.to}.`],
+  email_in: e => [h("b", {}, "Mail in "), `from ${e.data.from}: "${e.data.subject}".`],
+  email_sent: e => [h("b", {}, "You send mail "), `to ${e.data.to}: "${e.data.subject}".`],
+};
+
+function cueName(s) {
+  if (s.who === "me") return "You";
+  if (s.who === "media") return "TV (media audio)";
+  return s.name;
+}
+
+function line(t, cls, ...body) {
+  return h("div", { class: "line " + (cls || "") }, h("div", { class: "t" }, t), h("div", { class: "body" }, ...body));
+}
+
+function renderScript() {
+  const day = DATA.days[state.day], run = day.runs[state.mode];
+  const out = [];
+  let lastAt = -1e9;
+  for (const it of timeline(run)) {
+    if (it.at - lastAt > 15 * 60) {
+      const hh = Math.floor(it.at / 3600), part = hh < 12 ? "morning" : hh < 17 ? "afternoon" : "evening";
+      out.push(h("div", { class: "slug" }, `${String(hh).padStart(2, "0")}:${String(Math.floor(it.at % 3600 / 60)).padStart(2, "0")} — ${part}`));
+    }
+    lastAt = Math.max(lastAt, it.at);
+    const clock = (it.s && it.s.clock) || (it.e && it.e.clock) || (it.d && it.d.clock) || (it.l && it.l.closed_clock) || "";
+    if (it.k === "seg") {
+      const s = it.s, m = it.marks, tags = [];
+      (m.open || []).forEach(l => tags.push(h("span", { class: "tag open" },
+        l.kind === "commitment" ? `${l.id} opens: yours` : l.kind === "waiting_on" ? `${l.id} opens: waiting on ${l.owner_name}` : `${l.id} idea saved`)));
+      (m.skip || []).forEach(k => tags.push(h("span", { class: "tag skip", title: k.text }, `not counted: ${k.reason}`)));
+      (m.priv || []).forEach(w => tags.push(h("span", { class: "tag priv" }, `heard, not kept: ${w.reason.split(" about")[0]}`)));
+      (m.fact || []).forEach(f => tags.push(h("span", { class: "tag " + (f.needs_confirm ? "priv" : "open") },
+        f.needs_confirm ? "memory: ask you first" : `memory: about ${f.about_name}`)));
+      out.push(line(clock, s.who === "media" ? "media" : "",
+        h("div", { class: "cue" }, cueName(s)), h("div", { class: "dlg" }, s.text),
+        tags.length ? h("div", { class: "marks" }, tags) : null));
+    } else if (it.k === "ev") {
+      const f = EVENT_TEXT[it.e.kind];
+      out.push(line(clock, "direction", "[", ...(f ? f(it.e) : [it.e.kind]), "]"));
+    } else if (it.k === "close") {
+      out.push(line(clock, "direction", h("span", { class: "tag closed" }, `${it.l.id} closed`), ` ${it.l.closed_by}`));
+    } else if (it.k === "dec") {
+      const d = it.d;
+      if (d.outcome === "spoke") {
+        const over = d.talked_over && d.talked_over.length;
+        out.push(line(clock, "whisper" + (over ? " bad" : ""),
+          h("div", { class: "cue" }, "Samantha (in your ear)"),
+          over ? h("div", { class: "paren" }, `(talks over ${d.talked_over.join(", ")})`) : null,
+          h("div", { class: "dlg" }, d.said),
+          h("details", { class: "why" }, h("summary", {}, whyLine(d)), h("ol", {}, d.reasons.map(r => h("li", {}, r))))));
+      } else {
+        const label = d.outcome === "digest" ? "saves for the next brief" : "lets it go";
+        out.push(line(clock, "held", `(Samantha ${label}: “${d.text}” ${d.reasons[d.reasons.length - 1]})`));
+      }
+    }
+  }
+  document.getElementById("script").replaceChildren(...out);
+}
+
+function whyLine(d) {
+  const last = d.reasons[d.reasons.length - 1] || "";
+  const holds = d.reasons.filter(r => r.includes("hold:")).length;
+  const waited = Math.round(d.at - clockToSec(d.created));
+  const w = waited >= 60 ? `waited ${waited >= 3600 ? Math.floor(waited / 3600) + "h " : ""}${Math.round(waited % 3600 / 60)}m` : waited > 0 ? `waited ${waited}s` : "spoke right away";
+  return `why now: ${w}${holds ? `, held ${holds}×` : ""}; ${last}`;
+}
+
+function renderSide() {
+  const day = DATA.days[state.day], run = day.runs[state.mode], s = run.score;
+  const groups = [
+    ["Yours", run.ledger.filter(l => l.kind === "commitment")],
+    ["Waiting on others", run.ledger.filter(l => l.kind === "waiting_on")],
+    ["Ideas", run.ledger.filter(l => l.kind === "idea")],
+  ];
+  const ledger = h("div", { class: "panel" }, h("h3", {}, "Ledger at end of day"),
+    groups.map(([name, list]) => h("div", { class: "group" }, h("h4", {}, name),
+      list.length ? list.map(l => h("div", { class: "item" },
+        h("span", { class: "id" }, l.id),
+        h("span", { class: "w" + (l.status === "closed" ? " closed" : "") }, l.display),
+        h("span", { class: "meta" }, [
+          l.kind === "commitment" && l.counterparty_name ? `to ${l.counterparty_name}` : l.kind === "waiting_on" ? `from ${l.owner_name}` : null,
+          l.due_text ? `due ${l.due_text}` : null, l.status].filter(Boolean).join(" · ")))) : h("div", { class: "empty" }, "none"))));
+
+  const kept = run.facts.filter(f => !f.needs_confirm), ask = run.facts.filter(f => f.needs_confirm);
+  const memory = h("div", { class: "panel" }, h("h3", {}, "Memory"),
+    h("div", { class: "group" }, h("h4", {}, "Kept"),
+      kept.length ? kept.map(f => h("div", { class: "item" }, h("span", { class: "id" }, f.id), h("span", { class: "w" }, f.fact), h("span", { class: "meta" }, `about ${f.about_name}`))) : h("div", { class: "empty" }, "none")),
+    ask.length ? h("div", { class: "group" }, h("h4", {}, "Ask you first"), ask.map(f => h("div", { class: "item" }, h("span", { class: "id" }, f.id), h("span", { class: "w" }, f.fact)))) : null,
+    h("div", { class: "group" }, h("h4", {}, "Heard, not kept"),
+      run.withheld.length ? run.withheld.map(w => h("div", { class: "item" }, h("span", { class: "id" }, w.clock.slice(0, 5)), h("span", { class: "w" }, `About ${w.about}`), h("span", { class: "meta" }, w.reason))) : h("div", { class: "empty" }, state.mode === "baseline" ? "baseline keeps everything" : "nothing sensitive heard")));
+
+  const pick = ["whisper_recall", "unrequested_whispers", "talk_over_person", "quiet_violations", "misattributed", "privacy_leaks"];
+  const scores = h("div", { class: "panel" }, h("h3", {}, "This day"),
+    h("div", { class: "mini" }, pick.flatMap(k => {
+      const m = DATA.metrics.find(x => x.key === k), v = s[k];
+      const good = GUARD.has(k) ? v === 0 : m.better === "higher" ? v >= 0.99 : v === 0;
+      return [h("span", {}, m.label), h("span", { class: "v " + (good ? "good" : "bad") }, fmtMetric(k, v))];
+    })));
+  document.getElementById("side").replaceChildren(scores, ledger, memory);
+}
+
+function renderControls() {
+  const days = document.getElementById("days");
+  days.replaceChildren(...DATA.days.map((d, i) => {
+    const b = h("button", { type: "button", id: `day-${i}`, "aria-pressed": String(i === state.day) }, `Day ${i + 1}: ${d.name.split(":")[0].split(" (")[0]}`);
+    b.addEventListener("click", () => { state.day = i; update(); });
+    return b;
+  }));
+  document.querySelectorAll("#modes button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.mode === state.mode)));
+  const day = DATA.days[state.day];
+  document.getElementById("mode-note").textContent = state.mode === "earshot"
+    ? `${day.name}. Samantha's lines are what Earshot decided to say; tap “why now” for the holds that came first.`
+    : `${day.name}. The baseline files every “I'll” it hears as yours and speaks the moment it has something to say.`;
+}
+
+function update() {
+  renderControls(); renderScript(); renderSide();
+  try { localStorage.setItem("earshot-view", JSON.stringify(state)); } catch (e) {}
+}
+
+document.querySelectorAll("#modes button").forEach(b => b.addEventListener("click", () => { state.mode = b.dataset.mode; update(); }));
+try { const saved = JSON.parse(localStorage.getItem("earshot-view") || "null"); if (saved && DATA.days[saved.day]) Object.assign(state, saved); } catch (e) {}
+const hash = location.hash.replace("#", "");
+if (/^day[123]$/.test(hash)) state.day = Number(hash.slice(3)) - 1;
+scorecard();
+update();
+</script>

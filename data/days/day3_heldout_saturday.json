@@ -1,0 +1,80 @@
+{
+  "name": "Saturday: errands and a family call (held out)",
+  "date": "2026-10-17",
+  "weekday": 5,
+  "heldout": true,
+  "people": {
+    "rohan": {"name": "Rohan", "aliases": ["rohan"]},
+    "mum": {"name": "Mum", "aliases": ["mum", "mummy"]},
+    "dad": {"name": "Dad", "aliases": ["dad", "papa"]},
+    "neha": {"name": "Neha", "aliases": ["neha"]},
+    "spk_2": {"name": "Shopkeeper (unknown voice)", "aliases": []}
+  },
+  "segments": [
+    {"at": "09:10:00", "who": "rohan", "text": "Bro, the wifi bill is due Monday, can you handle it this time?"},
+    {"at": "09:10:05", "who": "me", "text": "Yeah I'll pay it tomorrow."},
+    {"at": "09:10:10", "who": "rohan", "text": "Cool, and I'll clean the kitchen later."},
+    {"at": "09:10:16", "who": "me", "text": "Deal."},
+    {"at": "09:30:00", "who": "media", "text": "Smash that like button and I'll see you in the next one."},
+    {"at": "10:00:00", "who": "me", "text": "Need to remember to renew my passport before December."},
+
+    {"at": "10:30:00", "who": "spk_2", "text": "Your order will be ready by five, please collect it."},
+    {"at": "10:30:05", "who": "me", "text": "Okay, I'll come by at five."},
+
+    {"at": "11:00:00", "who": "mum", "text": "Beta, did you eat properly?"},
+    {"at": "11:00:04", "who": "me", "text": "Yes Mum, I did."},
+    {"at": "11:00:08", "who": "mum", "text": "Your dad's knee surgery is on the twentieth, he's nervous."},
+    {"at": "11:00:15", "who": "me", "text": "I'll call him tonight to cheer him up."},
+    {"at": "11:00:22", "who": "mum", "text": "And send me the photos from Neha's wedding."},
+    {"at": "11:00:27", "who": "me", "text": "Sure, will do."},
+    {"at": "11:00:30", "who": "mum", "text": "Your cousin's engagement is next month, keep the date free."},
+    {"at": "11:00:40", "who": "me", "text": "Okay Mum, bye!"},
+    {"at": "11:00:42", "who": "mum", "text": "Bye beta."},
+
+    {"at": "12:30:00", "who": "neha", "text": "So I'm thinking of quitting and starting my own studio."},
+    {"at": "12:30:06", "who": "me", "text": "Whoa, that's huge."},
+    {"at": "12:30:10", "who": "neha", "text": "Don't tell anyone yet, okay?"},
+    {"at": "12:30:14", "who": "me", "text": "Of course."},
+    {"at": "12:30:18", "who": "neha", "text": "Also could you look over my portfolio site this week?"},
+    {"at": "12:30:24", "who": "me", "text": "Absolutely, send me the link."},
+    {"at": "12:30:30", "who": "neha", "text": "I'll send it tonight."},
+    {"at": "12:30:36", "who": "neha", "text": "My favourite cafe is that new one on Linking Road, we should go."},
+    {"at": "12:30:45", "who": "me", "text": "Yes! Let's go next weekend."},
+
+    {"at": "13:00:00", "who": "me", "text": "Idea for the app: a weekly people-you-haven't-talked-to-in-a-while nudge."},
+
+    {"at": "17:10:00", "who": "me", "text": "Collected the order, finally."},
+    {"at": "20:30:00", "who": "me", "text": "Paid the wifi bill."},
+    {"at": "21:40:00", "who": "me", "text": "Called Dad, he sounds better."},
+    {"at": "21:45:00", "who": "rohan", "text": "Kitchen's clean, by the way."}
+  ],
+  "events": [
+    {"at": "16:40:00", "kind": "email_in", "data": {"from": "neha", "subject": "portfolio link", "say": "Neha sent her portfolio link."}},
+    {"at": "18:00:00", "kind": "pause_listening"},
+    {"at": "19:00:00", "kind": "resume_listening"}
+  ],
+  "truth": {
+    "ledger": [
+      {"id": "wifi", "owner": "me", "kind": "commitment", "counterparty": "rohan", "keys": ["wifi"], "status": "closed"},
+      {"id": "kitchen", "owner": "rohan", "kind": "waiting_on", "keys": ["kitchen"], "status": "closed"},
+      {"id": "passport", "owner": "me", "kind": "commitment", "keys": ["passport"], "status": "open"},
+      {"id": "collect", "owner": "me", "kind": "commitment", "counterparty": "spk_2", "keys": ["collect"], "status": "closed"},
+      {"id": "call-dad", "owner": "me", "kind": "commitment", "counterparty": "dad", "keys": ["call"], "status": "closed"},
+      {"id": "photos", "owner": "me", "kind": "commitment", "counterparty": "mum", "keys": ["photos"], "status": "open"},
+      {"id": "portfolio", "owner": "me", "kind": "commitment", "counterparty": "neha", "keys": ["portfolio"], "status": "open"},
+      {"id": "neha-link", "owner": "neha", "kind": "waiting_on", "keys": ["send"], "status": "closed"},
+      {"id": "idea", "owner": "me", "kind": "idea", "keys": ["weekly"], "status": "open"}
+    ],
+    "not_my_commitments": ["kitchen", "next one", "studio", "like button"],
+    "mind": [["engagement"], ["cafe"]],
+    "forbidden_memory": ["surgery", "knee"],
+    "nudges": [
+      {"id": "collect-due", "kind": "deadline", "keys": ["collect"], "earliest": "15:00:00", "latest": "17:00:00"},
+      {"id": "neha-news", "kind": "news", "keys": ["portfolio"], "earliest": "16:40:00", "latest": "17:30:00"},
+      {"id": "call-due", "kind": "deadline", "keys": ["call"], "earliest": "19:00:00", "latest": "21:00:00"}
+    ],
+    "quiet": [
+      {"why": "Listening paused for dinner", "from": "18:00:00", "to": "19:00:00"}
+    ]
+  }
+}

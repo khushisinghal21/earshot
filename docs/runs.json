@@ -1,0 +1,4823 @@
+{
+ "metrics": [
+  {
+   "key": "ledger_recall",
+   "label": "Ledger recall",
+   "better": "higher"
+  },
+  {
+   "key": "ledger_precision",
+   "label": "Ledger precision",
+   "better": "higher"
+  },
+  {
+   "key": "counterparty_accuracy",
+   "label": "Right person on the loop",
+   "better": "higher"
+  },
+  {
+   "key": "status_accuracy",
+   "label": "Open/closed correct",
+   "better": "higher"
+  },
+  {
+   "key": "misattributed",
+   "label": "Others' promises filed as yours",
+   "better": "lower"
+  },
+  {
+   "key": "mind_recall",
+   "label": "Mind facts kept",
+   "better": "higher"
+  },
+  {
+   "key": "privacy_leaks",
+   "label": "Bystander secrets stored",
+   "better": "lower"
+  },
+  {
+   "key": "whisper_recall",
+   "label": "Right whisper, right window",
+   "better": "higher"
+  },
+  {
+   "key": "unrequested_whispers",
+   "label": "Whispers nobody needed",
+   "better": "lower"
+  },
+  {
+   "key": "talk_over_person",
+   "label": "Talked over a person",
+   "better": "lower"
+  },
+  {
+   "key": "quiet_violations",
+   "label": "Spoke during Focus",
+   "better": "lower"
+  }
+ ],
+ "days": [
+  {
+   "id": "day1_tuesday",
+   "name": "Tuesday: standup, lunch, deep work",
+   "date": "2026-10-13",
+   "heldout": false,
+   "truth": {
+    "ledger": [
+     {
+      "id": "oat",
+      "owner": "me",
+      "kind": "commitment",
+      "counterparty": "jordan",
+      "keys": [
+       "oat"
+      ],
+      "status": "closed"
+     },
+     {
+      "id": "plumber",
+      "owner": "me",
+      "kind": "commitment",
+      "keys": [
+       "plumber"
+      ],
+      "status": "closed"
+     },
+     {
+      "id": "thai",
+      "owner": "jordan",
+      "kind": "waiting_on",
+      "keys": [
+       "thai"
+      ],
+      "status": "open"
+     },
+     {
+      "id": "login",
+      "owner": "dev",
+      "kind": "waiting_on",
+      "keys": [
+       "login"
+      ],
+      "status": "open"
+     },
+     {
+      "id": "deck",
+      "owner": "me",
+      "kind": "commitment",
+      "counterparty": "priya",
+      "keys": [
+       "deck"
+      ],
+      "status": "closed"
+     },
+     {
+      "id": "staging",
+      "owner": "spk_4",
+      "kind": "waiting_on",
+      "keys": [
+       "staging"
+      ],
+      "status": "open"
+     },
+     {
+      "id": "podcast",
+      "owner": "me",
+      "kind": "commitment",
+      "counterparty": "sam",
+      "keys": [
+       "podcast"
+      ],
+      "status": "open"
+     },
+     {
+      "id": "dinner",
+      "owner": "sam",
+      "kind": "waiting_on",
+      "keys": [
+       "dinner"
+      ],
+      "status": "open"
+     },
+     {
+      "id": "flowers",
+      "owner": "me",
+      "kind": "commitment",
+      "counterparty": "mum",
+      "keys": [
+       "flowers"
+      ],
+      "status": "open"
+     },
+     {
+      "id": "idea",
+      "owner": "me",
+      "kind": "idea",
+      "keys": [
+       "onboarding"
+      ],
+      "status": "open"
+     }
+    ],
+    "not_my_commitments": [
+     "running",
+     "garage",
+     "groceries",
+     "back",
+     "staging",
+     "login",
+     "thai"
+    ],
+    "mind": [
+     [
+      "recital"
+     ],
+     [
+      "peonies"
+     ],
+     [
+      "birthday",
+      "wednesday"
+     ]
+    ],
+    "forbidden_memory": [
+     "migraine"
+    ],
+    "nudges": [
+     {
+      "id": "deck-priya",
+      "kind": "contextual_loop",
+      "keys": [
+       "deck"
+      ],
+      "earliest": "15:40:00",
+      "latest": "15:41:00"
+     },
+     {
+      "id": "calendar",
+      "kind": "news",
+      "keys": [
+       "design review"
+      ],
+      "earliest": "13:01:00",
+      "latest": "14:30:00"
+     },
+     {
+      "id": "acme",
+      "kind": "news",
+      "keys": [
+       "acme"
+      ],
+      "earliest": "18:30:00",
+      "latest": "19:00:00"
+     },
+     {
+      "id": "plumber-due",
+      "kind": "deadline",
+      "keys": [
+       "plumber"
+      ],
+      "earliest": "18:00:00",
+      "latest": "18:50:00"
+     },
+     {
+      "id": "oat-due",
+      "kind": "deadline",
+      "keys": [
+       "oat"
+      ],
+      "earliest": "19:00:00",
+      "latest": "19:20:00"
+     },
+     {
+      "id": "podcast-due",
+      "kind": "deadline",
+      "keys": [
+       "podcast"
+      ],
+      "earliest": "19:00:00",
+      "latest": "21:00:00"
+     },
+     {
+      "id": "idea",
+      "kind": "idea_resurface",
+      "keys": [
+       "onboarding"
+      ],
+      "earliest": "20:30:00",
+      "latest": "20:40:00"
+     }
+    ],
+    "quiet": [
+     {
+      "why": "Focus block",
+      "from": "17:00:00",
+      "to": "18:30:00"
+     }
+    ]
+   },
+   "runs": {
+    "earshot": {
+     "day": {
+      "name": "Tuesday: standup, lunch, deep work",
+      "date": "2026-10-13"
+     },
+     "policy": {
+      "name": "earshot",
+      "solo_pause": 4.0,
+      "conv_pause": 2.5,
+      "conv_window": 60.0,
+      "presence_window": 300.0,
+      "cooldown": 480,
+      "hourly_budget": 4,
+      "focus_threshold": 0.9,
+      "max_conv_words": 14,
+      "backchannel_pause": 5.0,
+      "farewell_pause": 1.5,
+      "naive": false
+     },
+     "segments": [
+      {
+       "id": "s1",
+       "start": 29100.0,
+       "end": 29104.615384615383,
+       "who": "jordan",
+       "name": "Jordan",
+       "text": "Morning. Can you pick up oat milk on the way home tonight?",
+       "clock": "08:05:00"
+      },
+      {
+       "id": "s2",
+       "start": 29106.0,
+       "end": 29107.2,
+       "who": "me",
+       "name": "me",
+       "text": "Yeah, sure.",
+       "clock": "08:05:06"
+      },
+      {
+       "id": "s3",
+       "start": 29110.0,
+       "end": 29114.23076923077,
+       "who": "jordan",
+       "name": "Jordan",
+       "text": "Thanks. I'll book the Thai place for Saturday, Mira's coming too.",
+       "clock": "08:05:10"
+      },
+      {
+       "id": "s4",
+       "start": 29118.0,
+       "end": 29122.23076923077,
+       "who": "me",
+       "name": "me",
+       "text": "Nice. Oh, and I'll call the plumber about the sink today.",
+       "clock": "08:05:18"
+      },
+      {
+       "id": "s5",
+       "start": 29125.0,
+       "end": 29128.076923076922,
+       "who": "jordan",
+       "name": "Jordan",
+       "text": "Good, it kept me up half the night.",
+       "clock": "08:05:25"
+      },
+      {
+       "id": "s6",
+       "start": 29160.0,
+       "end": 29165.384615384617,
+       "who": "media",
+       "name": "media",
+       "text": "Coming up after the break, I'll show you three ways to save on groceries.",
+       "clock": "08:06:00"
+      },
+      {
+       "id": "s7",
+       "start": 29180.0,
+       "end": 29183.46153846154,
+       "who": "me",
+       "name": "me",
+       "text": "I should probably start running again at some point.",
+       "clock": "08:06:20"
+      },
+      {
+       "id": "s8",
+       "start": 34200.0,
+       "end": 34204.230769230766,
+       "who": "priya",
+       "name": "Priya",
+       "text": "Okay quick standup. Dev, where are we on the login bug?",
+       "clock": "09:30:00"
+      },
+      {
+       "id": "s9",
+       "start": 34206.0,
+       "end": 34210.61538461538,
+       "who": "dev",
+       "name": "Dev",
+       "text": "I'll fix the login bug before lunch, it's a token refresh thing.",
+       "clock": "09:30:06"
+      },
+      {
+       "id": "s10",
+       "start": 34213.0,
+       "end": 34214.92307692308,
+       "who": "priya",
+       "name": "Priya",
+       "text": "Great. And the investor deck?",
+       "clock": "09:30:13"
+      },
+      {
+       "id": "s11",
+       "start": 34217.0,
+       "end": 34222.769230769234,
+       "who": "me",
+       "name": "me",
+       "text": "Priya, I'll send you the pitch deck by Friday, I just need the new numbers.",
+       "clock": "09:30:17"
+      },
+      {
+       "id": "s12",
+       "start": 34225.0,
+       "end": 34228.07692307692,
+       "who": "spk_4",
+       "name": "New hire (unknown voice)",
+       "text": "I'll set up the staging environment this afternoon.",
+       "clock": "09:30:25"
+      },
+      {
+       "id": "s13",
+       "start": 34231.0,
+       "end": 34235.61538461538,
+       "who": "dev",
+       "name": "Dev",
+       "text": "Sorry I was slow yesterday, my migraines have been brutal this week.",
+       "clock": "09:30:31"
+      },
+      {
+       "id": "s14",
+       "start": 34239.0,
+       "end": 34244.38461538462,
+       "who": "priya",
+       "name": "Priya",
+       "text": "No worries. Also my daughter's recital is on Thursday so I'm out after three.",
+       "clock": "09:30:39"
+      },
+      {
+       "id": "s15",
+       "start": 34248.0,
+       "end": 34249.2,
+       "who": "me",
+       "name": "me",
+       "text": "Got it.",
+       "clock": "09:30:48"
+      },
+      {
+       "id": "s16",
+       "start": 39720.0,
+       "end": 39728.46153846154,
+       "who": "me",
+       "name": "me",
+       "text": "Okay, idea: what if onboarding asked people to name three friends they talk to most, so the memory starts with their people.",
+       "clock": "11:02:00"
+      },
+      {
+       "id": "s17",
+       "start": 39745.0,
+       "end": 39746.92307692308,
+       "who": "me",
+       "name": "me",
+       "text": "Hmm. Write that down later.",
+       "clock": "11:02:25"
+      },
+      {
+       "id": "s18",
+       "start": 46800.0,
+       "end": 46802.692307692305,
+       "who": "sam",
+       "name": "Sam",
+       "text": "You have to try the dumplings here.",
+       "clock": "13:00:00"
+      },
+      {
+       "id": "s19",
+       "start": 46804.0,
+       "end": 46806.307692307695,
+       "who": "me",
+       "name": "me",
+       "text": "I've heard. How was the trip?",
+       "clock": "13:00:04"
+      },
+      {
+       "id": "s20",
+       "start": 46808.0,
+       "end": 46811.46153846154,
+       "who": "sam",
+       "name": "Sam",
+       "text": "Amazing. Lisbon is unreal, the food, the hills, everything.",
+       "clock": "13:00:08"
+      },
+      {
+       "id": "s21",
+       "start": 46814.0,
+       "end": 46816.307692307695,
+       "who": "me",
+       "name": "me",
+       "text": "Jealous. Did you do the tram?",
+       "clock": "13:00:14"
+      },
+      {
+       "id": "s22",
+       "start": 46818.0,
+       "end": 46822.230769230766,
+       "who": "sam",
+       "name": "Sam",
+       "text": "Twice. Oh, and can you send me that podcast you mentioned?",
+       "clock": "13:00:18"
+      },
+      {
+       "id": "s23",
+       "start": 46825.0,
+       "end": 46826.92307692308,
+       "who": "me",
+       "name": "me",
+       "text": "Yeah, I'll send it tonight.",
+       "clock": "13:00:25"
+      },
+      {
+       "id": "s24",
+       "start": 46829.0,
+       "end": 46832.07692307692,
+       "who": "sam",
+       "name": "Sam",
+       "text": "Also I'll Venmo you for last week's dinner.",
+       "clock": "13:00:29"
+      },
+      {
+       "id": "s25",
+       "start": 46833.0,
+       "end": 46834.2,
+       "who": "me",
+       "name": "me",
+       "text": "No rush.",
+       "clock": "13:00:33"
+      },
+      {
+       "id": "s26",
+       "start": 46835.0,
+       "end": 46840.38461538462,
+       "who": "sam",
+       "name": "Sam",
+       "text": "My mom loves peonies by the way, I'm getting her some for her birthday.",
+       "clock": "13:00:35"
+      },
+      {
+       "id": "s27",
+       "start": 46841.0,
+       "end": 46842.53846153846,
+       "who": "me",
+       "name": "me",
+       "text": "Ha, so does mine.",
+       "clock": "13:00:41"
+      },
+      {
+       "id": "s28",
+       "start": 46844.0,
+       "end": 46847.07692307692,
+       "who": "sam",
+       "name": "Sam",
+       "text": "Anyway, work's been insane, we're hiring like crazy.",
+       "clock": "13:00:44"
+      },
+      {
+       "id": "s29",
+       "start": 46849.0,
+       "end": 46850.2,
+       "who": "me",
+       "name": "me",
+       "text": "Same here, honestly.",
+       "clock": "13:00:49"
+      },
+      {
+       "id": "s30",
+       "start": 46852.0,
+       "end": 46854.307692307695,
+       "who": "sam",
+       "name": "Sam",
+       "text": "Want to split the noodles too?",
+       "clock": "13:00:52"
+      },
+      {
+       "id": "s31",
+       "start": 46855.0,
+       "end": 46856.2,
+       "who": "me",
+       "name": "me",
+       "text": "Obviously.",
+       "clock": "13:00:55"
+      },
+      {
+       "id": "s32",
+       "start": 46860.0,
+       "end": 46865.38461538462,
+       "who": "sam",
+       "name": "Sam",
+       "text": "The guy at the counter remembered my order, that's how often I come here.",
+       "clock": "13:01:00"
+      },
+      {
+       "id": "s33",
+       "start": 46866.0,
+       "end": 46867.53846153846,
+       "who": "me",
+       "name": "me",
+       "text": "That's a little sad.",
+       "clock": "13:01:06"
+      },
+      {
+       "id": "s34",
+       "start": 46869.0,
+       "end": 46874.0,
+       "who": "sam",
+       "name": "Sam",
+       "text": "It's a lot sad. Okay, I have to run, good to see you.",
+       "clock": "13:01:09"
+      },
+      {
+       "id": "s35",
+       "start": 46875.0,
+       "end": 46877.307692307695,
+       "who": "me",
+       "name": "me",
+       "text": "You too, safe flight next week.",
+       "clock": "13:01:15"
+      },
+      {
+       "id": "s36",
+       "start": 56400.0,
+       "end": 56402.692307692305,
+       "who": "priya",
+       "name": "Priya",
+       "text": "Hey! Running to grab coffee, want anything?",
+       "clock": "15:40:00"
+      },
+      {
+       "id": "s37",
+       "start": 56405.0,
+       "end": 56406.2,
+       "who": "me",
+       "name": "me",
+       "text": "I'm good, thanks.",
+       "clock": "15:40:05"
+      },
+      {
+       "id": "s38",
+       "start": 56408.0,
+       "end": 56411.846153846156,
+       "who": "priya",
+       "name": "Priya",
+       "text": "Cool. Oh the board call got moved, did you see?",
+       "clock": "15:40:08"
+      },
+      {
+       "id": "s39",
+       "start": 56413.0,
+       "end": 56414.2,
+       "who": "me",
+       "name": "me",
+       "text": "Yeah I saw.",
+       "clock": "15:40:13"
+      },
+      {
+       "id": "s40",
+       "start": 56425.0,
+       "end": 56427.307692307695,
+       "who": "priya",
+       "name": "Priya",
+       "text": "Okay, see you in a bit.",
+       "clock": "15:40:25"
+      },
+      {
+       "id": "s41",
+       "start": 67800.0,
+       "end": 67802.69230769231,
+       "who": "me",
+       "name": "me",
+       "text": "Called the plumber, he's coming Thursday morning.",
+       "clock": "18:50:00"
+      },
+      {
+       "id": "s42",
+       "start": 69600.0,
+       "end": 69601.53846153847,
+       "who": "me",
+       "name": "me",
+       "text": "Got the oat milk.",
+       "clock": "19:20:00"
+      },
+      {
+       "id": "s43",
+       "start": 70800.0,
+       "end": 70802.30769230769,
+       "who": "jordan",
+       "name": "Jordan",
+       "text": "Did you get the oat milk?",
+       "clock": "19:40:00"
+      },
+      {
+       "id": "s44",
+       "start": 70804.0,
+       "end": 70805.92307692308,
+       "who": "me",
+       "name": "me",
+       "text": "Yep, it's in the fridge.",
+       "clock": "19:40:04"
+      },
+      {
+       "id": "s45",
+       "start": 72000.0,
+       "end": 72003.84615384616,
+       "who": "me",
+       "name": "me",
+       "text": "Mum's birthday is next Wednesday, I'll order her flowers tomorrow.",
+       "clock": "20:00:00"
+      },
+      {
+       "id": "s46",
+       "start": 73800.0,
+       "end": 73805.0,
+       "who": "me",
+       "name": "me",
+       "text": "Still thinking about onboarding, asking people to name their friends first feels right.",
+       "clock": "20:30:00"
+      },
+      {
+       "id": "s47",
+       "start": 74400.0,
+       "end": 74403.07692307692,
+       "who": "me",
+       "name": "me",
+       "text": "Actually I'll send Sam the podcast tomorrow instead.",
+       "clock": "20:40:00"
+      },
+      {
+       "id": "s48",
+       "start": 74700.0,
+       "end": 74703.46153846153,
+       "who": "me",
+       "name": "me",
+       "text": "Oh sure, I'll get right on cleaning the garage.",
+       "clock": "20:45:00"
+      },
+      {
+       "id": "s49",
+       "start": 75600.0,
+       "end": 75601.2,
+       "who": "media",
+       "name": "media",
+       "text": "I'll be back.",
+       "clock": "21:00:00"
+      }
+     ],
+     "events": [
+      {
+       "id": "e1",
+       "at": 46831.0,
+       "clock": "13:00:31",
+       "kind": "calendar_change",
+       "data": {
+        "title": "3pm design review",
+        "to": "tomorrow 11:00",
+        "say": "Your 3pm design review moved to tomorrow at 11, so the afternoon's open."
+       }
+      },
+      {
+       "id": "e2",
+       "at": 58200.0,
+       "clock": "16:10:00",
+       "kind": "email_sent",
+       "data": {
+        "to": "priya",
+        "subject": "Pitch deck v7"
+       }
+      },
+      {
+       "id": "e3",
+       "at": 61200.0,
+       "clock": "17:00:00",
+       "kind": "focus_on",
+       "data": {}
+      },
+      {
+       "id": "e4",
+       "at": 63900.0,
+       "clock": "17:45:00",
+       "kind": "email_in",
+       "data": {
+        "from": "acme",
+        "subject": "Pilot",
+        "awaited": true,
+        "say": "Acme replied about the pilot, and it's a yes. Read it when you're out of Focus."
+       }
+      },
+      {
+       "id": "e5",
+       "at": 66600.0,
+       "clock": "18:30:00",
+       "kind": "focus_off",
+       "data": {}
+      }
+     ],
+     "ledger": [
+      {
+       "id": "L1",
+       "kind": "commitment",
+       "owner": "me",
+       "counterparty": "jordan",
+       "what": "pick up oat milk on the way home",
+       "verb": "pick",
+       "due": 75600.0,
+       "due_text": "tonight",
+       "source_segment": "s2",
+       "created_at": 29109.0,
+       "status": "closed",
+       "closed_at": 69603.5,
+       "closed_by": "heard: \"Got the oat milk.\"",
+       "confidence": 0.85,
+       "history": [
+        "created: said yes to Jordan's request",
+        "closed: heard: \"Got the oat milk.\""
+       ],
+       "owner_name": "you",
+       "counterparty_name": "Jordan",
+       "created_clock": "08:05:09",
+       "closed_clock": "19:20:04",
+       "display": "pick up oat milk on the way home"
+      },
+      {
+       "id": "L2",
+       "kind": "waiting_on",
+       "owner": "jordan",
+       "counterparty": "me",
+       "what": "book the Thai place",
+       "verb": "book",
+       "due": 431940.0,
+       "due_text": "saturday",
+       "source_segment": "s3",
+       "created_at": 29116.0,
+       "status": "open",
+       "closed_at": null,
+       "closed_by": null,
+       "confidence": 0.85,
+       "history": [
+        "created: Jordan said it"
+       ],
+       "owner_name": "Jordan",
+       "counterparty_name": "you",
+       "created_clock": "08:05:16",
+       "closed_clock": null,
+       "display": "book the Thai place"
+      },
+      {
+       "id": "L3",
+       "kind": "commitment",
+       "owner": "me",
+       "counterparty": null,
+       "what": "call the plumber about the sink",
+       "verb": "call",
+       "due": 86340.0,
+       "due_text": "today",
+       "source_segment": "s4",
+       "created_at": 29124.0,
+       "status": "closed",
+       "closed_at": 67804.5,
+       "closed_by": "heard: \"Called the plumber, he's coming Thursday morning.\"",
+       "confidence": 0.85,
+       "history": [
+        "created: said it",
+        "closed: heard: \"Called the plumber, he's coming Thursday morning.\""
+       ],
+       "owner_name": "you",
+       "counterparty_name": null,
+       "created_clock": "08:05:24",
+       "closed_clock": "18:50:04",
+       "display": "call the plumber about the sink"
+      },
+      {
+       "id": "L4",
+       "kind": "waiting_on",
+       "owner": "dev",
+       "counterparty": "me",
+       "what": "fix the login bug",
+       "verb": "fix",
+       "due": 43200.0,
+       "due_text": "before lunch",
+       "source_segment": "s9",
+       "created_at": 34212.5,
+       "status": "open",
+       "closed_at": null,
+       "closed_by": null,
+       "confidence": 0.85,
+       "history": [
+        "created: Dev said it"
+       ],
+       "owner_name": "Dev",
+       "counterparty_name": "you",
+       "created_clock": "09:30:12",
+       "closed_clock": null,
+       "display": "fix the login bug"
+      },
+      {
+       "id": "L5",
+       "kind": "commitment",
+       "owner": "me",
+       "counterparty": "priya",
+       "what": "send Priya the pitch deck",
+       "verb": "send",
+       "due": 345540.0,
+       "due_text": "by friday",
+       "source_segment": "s11",
+       "created_at": 34224.5,
+       "status": "closed",
+       "closed_at": 58200.0,
+       "closed_by": "email to Priya: 'Pitch deck v7'",
+       "confidence": 0.85,
+       "history": [
+        "created: said it",
+        "closed: email to Priya: 'Pitch deck v7'"
+       ],
+       "owner_name": "you",
+       "counterparty_name": "Priya",
+       "created_clock": "09:30:24",
+       "closed_clock": "16:10:00",
+       "display": "send Priya the pitch deck"
+      },
+      {
+       "id": "L6",
+       "kind": "waiting_on",
+       "owner": "spk_4",
+       "counterparty": "me",
+       "what": "set up the staging environment",
+       "verb": "set",
+       "due": 61200.0,
+       "due_text": "this afternoon",
+       "source_segment": "s12",
+       "created_at": 34230.0,
+       "status": "open",
+       "closed_at": null,
+       "closed_by": null,
+       "confidence": 0.85,
+       "history": [
+        "created: New hire (unknown voice) said it"
+       ],
+       "owner_name": "New hire (unknown voice)",
+       "counterparty_name": "you",
+       "created_clock": "09:30:30",
+       "closed_clock": null,
+       "display": "set up the staging environment"
+      },
+      {
+       "id": "L7",
+       "kind": "idea",
+       "owner": "me",
+       "counterparty": null,
+       "what": "what if onboarding asked people to name three friends they talk to most, so the memory starts with their people",
+       "verb": "what",
+       "due": null,
+       "due_text": null,
+       "source_segment": "s16",
+       "created_at": 39730.0,
+       "status": "open",
+       "closed_at": null,
+       "closed_by": null,
+       "confidence": 0.7,
+       "history": [
+        "created: thinking aloud, alone"
+       ],
+       "owner_name": "you",
+       "counterparty_name": null,
+       "created_clock": "11:02:10",
+       "closed_clock": null,
+       "display": "what if onboarding asked people to name three friends they talk to most, so the memory starts with their people"
+      },
+      {
+       "id": "L8",
+       "kind": "commitment",
+       "owner": "me",
+       "counterparty": "sam",
+       "what": "send Sam that podcast you mentioned",
+       "verb": "send",
+       "due": 172740.0,
+       "due_text": "tomorrow",
+       "source_segment": "s23",
+       "created_at": 46828.5,
+       "status": "open",
+       "closed_at": null,
+       "closed_by": null,
+       "confidence": 0.85,
+       "history": [
+        "created: said yes to Sam's request",
+        "due moved 'tonight' -> 'tomorrow' (said it)"
+       ],
+       "owner_name": "you",
+       "counterparty_name": "Sam",
+       "created_clock": "13:00:28",
+       "closed_clock": null,
+       "display": "send Sam that podcast you mentioned"
+      },
+      {
+       "id": "L9",
+       "kind": "waiting_on",
+       "owner": "sam",
+       "counterparty": "me",
+       "what": "Venmo you for last week's dinner",
+       "verb": "venmo",
+       "due": null,
+       "due_text": null,
+       "source_segment": "s24",
+       "created_at": 46834.0,
+       "status": "open",
+       "closed_at": null,
+       "closed_by": null,
+       "confidence": 0.85,
+       "history": [
+        "created: Sam said it"
+       ],
+       "owner_name": "Sam",
+       "counterparty_name": "you",
+       "created_clock": "13:00:34",
+       "closed_clock": null,
+       "display": "Venmo you for last week's dinner"
+      },
+      {
+       "id": "L10",
+       "kind": "commitment",
+       "owner": "me",
+       "counterparty": "mum",
+       "what": "order her flowers",
+       "verb": "order",
+       "due": 172740.0,
+       "due_text": "tomorrow",
+       "source_segment": "s45",
+       "created_at": 72005.5,
+       "status": "open",
+       "closed_at": null,
+       "closed_by": null,
+       "confidence": 0.85,
+       "history": [
+        "created: said it"
+       ],
+       "owner_name": "you",
+       "counterparty_name": "Mum",
+       "created_clock": "20:00:06",
+       "closed_clock": null,
+       "display": "order her flowers"
+      }
+     ],
+     "skipped": [
+      {
+       "segment": "s3",
+       "speaker": "jordan",
+       "text": "I'll book the Thai place for Saturday, Mira's coming too.",
+       "reason": "not the wearer's promise (Jordan said it) -> waiting-on"
+      },
+      {
+       "segment": "s6",
+       "speaker": "media",
+       "text": "Coming up after the break, I'll show you three ways to save on groceries.",
+       "reason": "media audio (not a person in the room)"
+      },
+      {
+       "segment": "s9",
+       "speaker": "dev",
+       "text": "I'll fix the login bug before lunch, it's a token refresh thing.",
+       "reason": "not the wearer's promise (Dev said it) -> waiting-on"
+      },
+      {
+       "segment": "s12",
+       "speaker": "spk_4",
+       "text": "I'll set up the staging environment this afternoon.",
+       "reason": "not the wearer's promise (New hire (unknown voice) said it) -> waiting-on"
+      },
+      {
+       "segment": "s24",
+       "speaker": "sam",
+       "text": "Also I'll Venmo you for last week's dinner.",
+       "reason": "not the wearer's promise (Sam said it) -> waiting-on"
+      },
+      {
+       "segment": "s48",
+       "speaker": "me",
+       "text": "Oh sure, I'll get right on cleaning the garage.",
+       "reason": "sarcasm marker"
+      },
+      {
+       "segment": "s49",
+       "speaker": "media",
+       "text": "I'll be back.",
+       "reason": "media audio (not a person in the room)"
+      }
+     ],
+     "facts": [
+      {
+       "id": "M1",
+       "about": "Priya's daughter",
+       "fact": "Also my daughter's recital is on Thursday so I'm out after three",
+       "source_segment": "s14",
+       "created_at": 34246.0,
+       "needs_confirm": false,
+       "about_name": "Priya's daughter",
+       "clock": "09:30:46"
+      },
+      {
+       "id": "M2",
+       "about": "Sam's mom",
+       "fact": "My mom loves peonies by the way, I'm getting her some for her birthday",
+       "source_segment": "s26",
+       "created_at": 46842.0,
+       "needs_confirm": false,
+       "about_name": "Sam's mom",
+       "clock": "13:00:42"
+      },
+      {
+       "id": "M3",
+       "about": "mum",
+       "fact": "Mum's birthday is next Wednesday, I'll order her flowers tomorrow",
+       "source_segment": "s45",
+       "created_at": 72005.5,
+       "needs_confirm": false,
+       "about_name": "Mum",
+       "clock": "20:00:06"
+      }
+     ],
+     "withheld": [
+      {
+       "source_segment": "s13",
+       "at": 34237.5,
+       "about": "Dev",
+       "reason": "sensitive (health) about someone other than the wearer: not stored",
+       "clock": "09:30:38"
+      }
+     ],
+     "decisions": [
+      {
+       "id": "news-e1",
+       "kind": "news",
+       "outcome": "spoke",
+       "at": 46934.5,
+       "clock": "13:02:14",
+       "created": "13:00:31",
+       "said": "Your 3pm design review moved to tomorrow at 11, so the afternoon's open.",
+       "text": "Your 3pm design review moved to tomorrow at 11, so the afternoon's open.",
+       "duration": 5.0,
+       "priority": 0.6,
+       "reasons": [
+        "13:00:31 created: calendar change",
+        "13:00:31 hold: Sam is talking",
+        "13:00:32 hold: in a conversation with Sam and this isn't about them",
+        "13:00:33 hold: you are talking",
+        "13:00:34 hold: in a conversation with Sam and this isn't about them",
+        "13:00:35 hold: Sam is talking",
+        "13:00:40 hold: in a conversation with Sam and this isn't about them",
+        "13:00:41 hold: you are talking",
+        "13:00:43 hold: in a conversation with Sam and this isn't about them",
+        "13:00:44 hold: Sam is talking",
+        "13:00:48 hold: in a conversation with Sam and this isn't about them",
+        "13:00:49 hold: you are talking",
+        "13:00:50 hold: in a conversation with Sam and this isn't about them",
+        "13:00:52 hold: Sam is talking",
+        "13:00:54 hold: in a conversation with Sam and this isn't about them",
+        "13:00:55 hold: you are talking",
+        "13:00:56 hold: in a conversation with Sam and this isn't about them",
+        "13:01:00 hold: Sam is talking",
+        "13:01:06 hold: in a conversation with Sam and this isn't about them",
+        "13:01:06 hold: you are talking",
+        "13:01:08 hold: in a conversation with Sam and this isn't about them",
+        "13:01:09 hold: Sam is talking",
+        "13:01:14 hold: in a conversation with Sam and this isn't about them",
+        "13:01:15 hold: you are talking",
+        "13:01:18 hold: in a conversation with Sam and this isn't about them",
+        "quiet for 57.2s, nobody else around"
+       ],
+       "ledger_id": null,
+       "people": [],
+       "talked_over": []
+      },
+      {
+       "id": "ctx-L5-priya",
+       "kind": "contextual_loop",
+       "outcome": "spoke",
+       "at": 56419.5,
+       "clock": "15:40:20",
+       "created": "15:40:00",
+       "said": "Priya's here. Still open: send Priya the pitch deck, by Friday.",
+       "text": "Priya's here. Still open from you: send Priya the pitch deck, by Friday.",
+       "duration": 4.230769230769231,
+       "priority": 0.75,
+       "reasons": [
+        "15:40:00 created: Priya started talking and L5 is open with them",
+        "15:40:00 hold: Priya is talking",
+        "15:40:05 hold: you are talking",
+        "15:40:08 hold: Priya is talking",
+        "15:40:13 hold: you are talking",
+        "lull after your short reply: 5.3s of quiet",
+        "about someone here"
+       ],
+       "ledger_id": "L5",
+       "people": [
+        "Priya"
+       ],
+       "talked_over": []
+      },
+      {
+       "id": "news-e4",
+       "kind": "news",
+       "outcome": "spoke",
+       "at": 66600.0,
+       "clock": "18:30:00",
+       "created": "17:45:00",
+       "said": "Acme replied about the pilot, and it's a yes. Read it when you're out of Focus.",
+       "text": "Acme replied about the pilot, and it's a yes. Read it when you're out of Focus.",
+       "duration": 6.153846153846153,
+       "priority": 0.7,
+       "reasons": [
+        "17:45:00 created: a reply you were waiting on",
+        "17:45:00 hold: Focus is on",
+        "quiet for 2h 49m, nobody else around"
+       ],
+       "ledger_id": null,
+       "people": [
+        "acme"
+       ],
+       "talked_over": []
+      },
+      {
+       "id": "due-L3",
+       "kind": "deadline",
+       "outcome": "spoke",
+       "at": 67080.0,
+       "clock": "18:38:00",
+       "created": "18:00:00",
+       "said": "Heads up: you said you'd call the plumber about the sink, today. Still open.",
+       "text": "Heads up: you said you'd call the plumber about the sink, today. Still open.",
+       "duration": 5.384615384615384,
+       "priority": 0.65,
+       "reasons": [
+        "18:00:00 created: due today and not closed",
+        "18:00:00 hold: Focus is on",
+        "18:30:08 hold: spoke recently; cooling down",
+        "quiet for 2h 57m, nobody else around"
+       ],
+       "ledger_id": "L3",
+       "people": [],
+       "talked_over": []
+      },
+      {
+       "id": "due-L1",
+       "kind": "deadline",
+       "outcome": "spoke",
+       "at": 68400.0,
+       "clock": "19:00:00",
+       "created": "19:00:00",
+       "said": "Heads up: you told Jordan you'd pick up oat milk on the way home, tonight. Still open.",
+       "text": "Heads up: you told Jordan you'd pick up oat milk on the way home, tonight. Still open.",
+       "duration": 6.538461538461538,
+       "priority": 0.65,
+       "reasons": [
+        "19:00:00 created: due tonight and not closed",
+        "quiet for 9m, nobody else around"
+       ],
+       "ledger_id": "L1",
+       "people": [
+        "Jordan"
+       ],
+       "talked_over": []
+      },
+      {
+       "id": "due-L8",
+       "kind": "deadline",
+       "outcome": "spoke",
+       "at": 68880.0,
+       "clock": "19:08:00",
+       "created": "19:00:00",
+       "said": "Heads up: you said you'd send Sam that podcast you mentioned, tonight. Still open.",
+       "text": "Heads up: you said you'd send Sam that podcast you mentioned, tonight. Still open.",
+       "duration": 5.384615384615384,
+       "priority": 0.65,
+       "reasons": [
+        "19:00:00 created: due tonight and not closed",
+        "19:00:08 hold: spoke recently; cooling down",
+        "quiet for 17m, nobody else around"
+       ],
+       "ledger_id": "L8",
+       "people": [
+        "Sam"
+       ],
+       "talked_over": []
+      },
+      {
+       "id": "idea-L7-s46",
+       "kind": "idea_resurface",
+       "outcome": "spoke",
+       "at": 73809.0,
+       "clock": "20:30:09",
+       "created": "20:30:06",
+       "said": "You had a version of this at 11:02: \"what if onboarding asked people to name three friends they talk to...\" Want to pick it up?",
+       "text": "You had a version of this at 11:02: \"what if onboarding asked people to name three friends they talk to...\" Want to pick it up?",
+       "duration": 9.615384615384615,
+       "priority": 0.4,
+       "reasons": [
+        "20:30:06 created: you're circling back to L7",
+        "quiet for 4.0s, nobody else around"
+       ],
+       "ledger_id": "L7",
+       "people": [],
+       "talked_over": []
+      }
+     ],
+     "score": {
+      "ledger_recall": 1.0,
+      "ledger_precision": 1.0,
+      "status_accuracy": 1.0,
+      "counterparty_accuracy": 1.0,
+      "misattributed": 0,
+      "mind_recall": 1.0,
+      "privacy_leaks": 0,
+      "whisper_recall": 1.0,
+      "whispers": 7,
+      "unrequested_whispers": 0,
+      "talk_over_person": 0,
+      "talk_over_any": 0,
+      "quiet_violations": 0
+     }
+    },
+    "baseline": {
+     "day": {
+      "name": "Tuesday: standup, lunch, deep work",
+      "date": "2026-10-13"
+     },
+     "policy": {
+      "name": "baseline",
+      "solo_pause": 4.0,
+      "conv_pause": 2.5,
+      "conv_window": 60.0,
+      "presence_window": 300.0,
+      "cooldown": 480,
+      "hourly_budget": 4,
+      "focus_threshold": 0.9,
+      "max_conv_words": 14,
+      "backchannel_pause": 5.0,
+      "farewell_pause": 1.5,
+      "naive": true
+     },
+     "segments": [
+      {
+       "id": "s1",
+       "start": 29100.0,
+       "end": 29104.615384615383,
+       "who": "jordan",
+       "name": "Jordan",
+       "text": "Morning. Can you pick up oat milk on the way home tonight?",
+       "clock": "08:05:00"
+      },
+      {
+       "id": "s2",
+       "start": 29106.0,
+       "end": 29107.2,
+       "who": "me",
+       "name": "me",
+       "text": "Yeah, sure.",
+       "clock": "08:05:06"
+      },
+      {
+       "id": "s3",
+       "start": 29110.0,
+       "end": 29114.23076923077,
+       "who": "jordan",
+       "name": "Jordan",
+       "text": "Thanks. I'll book the Thai place for Saturday, Mira's coming too.",
+       "clock": "08:05:10"
+      },
+      {
+       "id": "s4",
+       "start": 29118.0,
+       "end": 29122.23076923077,
+       "who": "me",
+       "name": "me",
+       "text": "Nice. Oh, and I'll call the plumber about the sink today.",
+       "clock": "08:05:18"
+      },
+      {
+       "id": "s5",
+       "start": 29125.0,
+       "end": 29128.076923076922,
+       "who": "jordan",
+       "name": "Jordan",
+       "text": "Good, it kept me up half the night.",
+       "clock": "08:05:25"
+      },
+      {
+       "id": "s6",
+       "start": 29160.0,
+       "end": 29165.384615384617,
+       "who": "media",
+       "name": "media",
+       "text": "Coming up after the break, I'll show you three ways to save on groceries.",
+       "clock": "08:06:00"
+      },
+      {
+       "id": "s7",
+       "start": 29180.0,
+       "end": 29183.46153846154,
+       "who": "me",
+       "name": "me",
+       "text": "I should probably start running again at some point.",
+       "clock": "08:06:20"
+      },
+      {
+       "id": "s8",
+       "start": 34200.0,
+       "end": 34204.230769230766,
+       "who": "priya",
+       "name": "Priya",
+       "text": "Okay quick standup. Dev, where are we on the login bug?",
+       "clock": "09:30:00"
+      },
+      {
+       "id": "s9",
+       "start": 34206.0,
+       "end": 34210.61538461538,
+       "who": "dev",
+       "name": "Dev",
+       "text": "I'll fix the login bug before lunch, it's a token refresh thing.",
+       "clock": "09:30:06"
+      },
+      {
+       "id": "s10",
+       "start": 34213.0,
+       "end": 34214.92307692308,
+       "who": "priya",
+       "name": "Priya",
+       "text": "Great. And the investor deck?",
+       "clock": "09:30:13"
+      },
+      {
+       "id": "s11",
+       "start": 34217.0,
+       "end": 34222.769230769234,
+       "who": "me",
+       "name": "me",
+       "text": "Priya, I'll send you the pitch deck by Friday, I just need the new numbers.",
+       "clock": "09:30:17"
+      },
+      {
+       "id": "s12",
+       "start": 34225.0,
+       "end": 34228.07692307692,
+       "who": "spk_4",
+       "name": "New hire (unknown voice)",
+       "text": "I'll set up the staging environment this afternoon.",
+       "clock": "09:30:25"
+      },
+      {
+       "id": "s13",
+       "start": 34231.0,
+       "end": 34235.61538461538,
+       "who": "dev",
+       "name": "Dev",
+       "text": "Sorry I was slow yesterday, my migraines have been brutal this week.",
+       "clock": "09:30:31"
+      },
+      {
+       "id": "s14",
+       "start": 34239.0,
+       "end": 34244.38461538462,
+       "who": "priya",
+       "name": "Priya",
+       "text": "No worries. Also my daughter's recital is on Thursday so I'm out after three.",
+       "clock": "09:30:39"
+      },
+      {
+       "id": "s15",
+       "start": 34248.0,
+       "end": 34249.2,
+       "who": "me",
+       "name": "me",
+       "text": "Got it.",
+       "clock": "09:30:48"
+      },
+      {
+       "id": "s16",
+       "start": 39720.0,
+       "end": 39728.46153846154,
+       "who": "me",
+       "name": "me",
+       "text": "Okay, idea: what if onboarding asked people to name three friends they talk to most, so the memory starts with their people.",
+       "clock": "11:02:00"
+      },
+      {
+       "id": "s17",
+       "start": 39745.0,
+       "end": 39746.92307692308,
+       "who": "me",
+       "name": "me",
+       "text": "Hmm. Write that down later.",
+       "clock": "11:02:25"
+      },
+      {
+       "id": "s18",
+       "start": 46800.0,
+       "end": 46802.692307692305,
+       "who": "sam",
+       "name": "Sam",
+       "text": "You have to try the dumplings here.",
+       "clock": "13:00:00"
+      },
+      {
+       "id": "s19",
+       "start": 46804.0,
+       "end": 46806.307692307695,
+       "who": "me",
+       "name": "me",
+       "text": "I've heard. How was the trip?",
+       "clock": "13:00:04"
+      },
+      {
+       "id": "s20",
+       "start": 46808.0,
+       "end": 46811.46153846154,
+       "who": "sam",
+       "name": "Sam",
+       "text": "Amazing. Lisbon is unreal, the food, the hills, everything.",
+       "clock": "13:00:08"
+      },
+      {
+       "id": "s21",
+       "start": 46814.0,
+       "end": 46816.307692307695,
+       "who": "me",
+       "name": "me",
+       "text": "Jealous. Did you do the tram?",
+       "clock": "13:00:14"
+      },
+      {
+       "id": "s22",
+       "start": 46818.0,
+       "end": 46822.230769230766,
+       "who": "sam",
+       "name": "Sam",
+       "text": "Twice. Oh, and can you send me that podcast you mentioned?",
+       "clock": "13:00:18"
+      },
+      {
+       "id": "s23",
+       "start": 46825.0,
+       "end": 46826.92307692308,
+       "who": "me",
+       "name": "me",
+       "text": "Yeah, I'll send it tonight.",
+       "clock": "13:00:25"
+      },
+      {
+       "id": "s24",
+       "start": 46829.0,
+       "end": 46832.07692307692,
+       "who": "sam",
+       "name": "Sam",
+       "text": "Also I'll Venmo you for last week's dinner.",
+       "clock": "13:00:29"
+      },
+      {
+       "id": "s25",
+       "start": 46833.0,
+       "end": 46834.2,
+       "who": "me",
+       "name": "me",
+       "text": "No rush.",
+       "clock": "13:00:33"
+      },
+      {
+       "id": "s26",
+       "start": 46835.0,
+       "end": 46840.38461538462,
+       "who": "sam",
+       "name": "Sam",
+       "text": "My mom loves peonies by the way, I'm getting her some for her birthday.",
+       "clock": "13:00:35"
+      },
+      {
+       "id": "s27",
+       "start": 46841.0,
+       "end": 46842.53846153846,
+       "who": "me",
+       "name": "me",
+       "text": "Ha, so does mine.",
+       "clock": "13:00:41"
+      },
+      {
+       "id": "s28",
+       "start": 46844.0,
+       "end": 46847.07692307692,
+       "who": "sam",
+       "name": "Sam",
+       "text": "Anyway, work's been insane, we're hiring like crazy.",
+       "clock": "13:00:44"
+      },
+      {
+       "id": "s29",
+       "start": 46849.0,
+       "end": 46850.2,
+       "who": "me",
+       "name": "me",
+       "text": "Same here, honestly.",
+       "clock": "13:00:49"
+      },
+      {
+       "id": "s30",
+       "start": 46852.0,
+       "end": 46854.307692307695,
+       "who": "sam",
+       "name": "Sam",
+       "text": "Want to split the noodles too?",
+       "clock": "13:00:52"
+      },
+      {
+       "id": "s31",
+       "start": 46855.0,
+       "end": 46856.2,
+       "who": "me",
+       "name": "me",
+       "text": "Obviously.",
+       "clock": "13:00:55"
+      },
+      {
+       "id": "s32",
+       "start": 46860.0,
+       "end": 46865.38461538462,
+       "who": "sam",
+       "name": "Sam",
+       "text": "The guy at the counter remembered my order, that's how often I come here.",
+       "clock": "13:01:00"
+      },
+      {
+       "id": "s33",
+       "start": 46866.0,
+       "end": 46867.53846153846,
+       "who": "me",
+       "name": "me",
+       "text": "That's a little sad.",
+       "clock": "13:01:06"
+      },
+      {
+       "id": "s34",
+       "start": 46869.0,
+       "end": 46874.0,
+       "who": "sam",
+       "name": "Sam",
+       "text": "It's a lot sad. Okay, I have to run, good to see you.",
+       "clock": "13:01:09"
+      },
+      {
+       "id": "s35",
+       "start": 46875.0,
+       "end": 46877.307692307695,
+       "who": "me",
+       "name": "me",
+       "text": "You too, safe flight next week.",
+       "clock": "13:01:15"
+      },
+      {
+       "id": "s36",
+       "start": 56400.0,
+       "end": 56402.692307692305,
+       "who": "priya",
+       "name": "Priya",
+       "text": "Hey! Running to grab coffee, want anything?",
+       "clock": "15:40:00"
+      },
+      {
+       "id": "s37",
+       "start": 56405.0,
+       "end": 56406.2,
+       "who": "me",
+       "name": "me",
+       "text": "I'm good, thanks.",
+       "clock": "15:40:05"
+      },
+      {
+       "id": "s38",
+       "start": 56408.0,
+       "end": 56411.846153846156,
+       "who": "priya",
+       "name": "Priya",
+       "text": "Cool. Oh the board call got moved, did you see?",
+       "clock": "15:40:08"
+      },
+      {
+       "id": "s39",
+       "start": 56413.0,
+       "end": 56414.2,
+       "who": "me",
+       "name": "me",
+       "text": "Yeah I saw.",
+       "clock": "15:40:13"
+      },
+      {
+       "id": "s40",
+       "start": 56425.0,
+       "end": 56427.307692307695,
+       "who": "priya",
+       "name": "Priya",
+       "text": "Okay, see you in a bit.",
+       "clock": "15:40:25"
+      },
+      {
+       "id": "s41",
+       "start": 67800.0,
+       "end": 67802.69230769231,
+       "who": "me",
+       "name": "me",
+       "text": "Called the plumber, he's coming Thursday morning.",
+       "clock": "18:50:00"
+      },
+      {
+       "id": "s42",
+       "start": 69600.0,
+       "end": 69601.53846153847,
+       "who": "me",
+       "name": "me",
+       "text": "Got the oat milk.",
+       "clock": "19:20:00"
+      },
+      {
+       "id": "s43",
+       "start": 70800.0,
+       "end": 70802.30769230769,
+       "who": "jordan",
+       "name": "Jordan",
+       "text": "Did you get the oat milk?",
+       "clock": "19:40:00"
+      },
+      {
+       "id": "s44",
+       "start": 70804.0,
+       "end": 70805.92307692308,
+       "who": "me",
+       "name": "me",
+       "text": "Yep, it's in the fridge.",
+       "clock": "19:40:04"
+      },
+      {
+       "id": "s45",
+       "start": 72000.0,
+       "end": 72003.84615384616,
+       "who": "me",
+       "name": "me",
+       "text": "Mum's birthday is next Wednesday, I'll order her flowers tomorrow.",
+       "clock": "20:00:00"
+      },
+      {
+       "id": "s46",
+       "start": 73800.0,
+       "end": 73805.0,
+       "who": "me",
+       "name": "me",
+       "text": "Still thinking about onboarding, asking people to name their friends first feels right.",
+       "clock": "20:30:00"
+      },
+      {
+       "id": "s47",
+       "start": 74400.0,
+       "end": 74403.07692307692,
+       "who": "me",
+       "name": "me",
+       "text": "Actually I'll send Sam the podcast tomorrow instead.",
+       "clock": "20:40:00"
+      },
+      {
+       "id": "s48",
+       "start": 74700.0,
+       "end": 74703.46153846153,
+       "who": "me",
+       "name": "me",
+       "text": "Oh sure, I'll get right on cleaning the garage.",
+       "clock": "20:45:00"
+      },
+      {
+       "id": "s49",
+       "start": 75600.0,
+       "end": 75601.2,
+       "who": "media",
+       "name": "media",
+       "text": "I'll be back.",
+       "clock": "21:00:00"
+      }
+     ],
+     "events": [
+      {
+       "id": "e1",
+       "at": 46831.0,
+       "clock": "13:00:31",
+       "kind": "calendar_change",
+       "data": {
+        "title": "3pm design review",
+        "to": "tomorrow 11:00",
+        "say": "Your 3pm design review moved to tomorrow at 11, so the afternoon's open."
+       }
+      },
+      {
+       "id": "e2",
+       "at": 58200.0,
+       "clock": "16:10:00",
+       "kind": "email_sent",
+       "data": {
+        "to": "priya",
+        "subject": "Pitch deck v7"
+       }
+      },
+      {
+       "id": "e3",
+       "at": 61200.0,
+       "clock": "17:00:00",
+       "kind": "focus_on",
+       "data": {}
+      },
+      {
+       "id": "e4",
+       "at": 63900.0,
+       "clock": "17:45:00",
+       "kind": "email_in",
+       "data": {
+        "from": "acme",
+        "subject": "Pilot",
+        "awaited": true,
+        "say": "Acme replied about the pilot, and it's a yes. Read it when you're out of Focus."
+       }
+      },
+      {
+       "id": "e5",
+       "at": 66600.0,
+       "clock": "18:30:00",
+       "kind": "focus_off",
+       "data": {}
+      }
+     ],
+     "ledger": [
+      {
+       "id": "L1",
+       "kind": "commitment",
+       "owner": "me",
+       "counterparty": null,
+       "what": "book the Thai place for Saturday, Mira's coming too",
+       "verb": "book",
+       "due": null,
+       "due_text": null,
+       "source_segment": "s3",
+       "created_at": 29116.0,
+       "status": "open",
+       "closed_at": null,
+       "closed_by": null,
+       "confidence": 0.85,
+       "history": [
+        "created: keyword 'I'll'"
+       ],
+       "owner_name": "you",
+       "counterparty_name": null,
+       "created_clock": "08:05:16",
+       "closed_clock": null,
+       "display": "book the Thai place for Saturday, Mira's coming too"
+      },
+      {
+       "id": "L2",
+       "kind": "commitment",
+       "owner": "me",
+       "counterparty": null,
+       "what": "call the plumber about the sink today",
+       "verb": "call",
+       "due": null,
+       "due_text": null,
+       "source_segment": "s4",
+       "created_at": 29124.0,
+       "status": "closed",
+       "closed_at": 67804.5,
+       "closed_by": "heard: \"Called the plumber, he's coming Thursday morning.\"",
+       "confidence": 0.85,
+       "history": [
+        "created: keyword 'I'll'",
+        "closed: heard: \"Called the plumber, he's coming Thursday morning.\""
+       ],
+       "owner_name": "you",
+       "counterparty_name": null,
+       "created_clock": "08:05:24",
+       "closed_clock": "18:50:04",
+       "display": "call the plumber about the sink today"
+      },
+      {
+       "id": "L3",
+       "kind": "commitment",
+       "owner": "me",
+       "counterparty": null,
+       "what": "show you three ways to save on groceries",
+       "verb": "show",
+       "due": null,
+       "due_text": null,
+       "source_segment": "s6",
+       "created_at": 29167.0,
+       "status": "open",
+       "closed_at": null,
+       "closed_by": null,
+       "confidence": 0.85,
+       "history": [
+        "created: keyword 'I'll'"
+       ],
+       "owner_name": "you",
+       "counterparty_name": null,
+       "created_clock": "08:06:07",
+       "closed_clock": null,
+       "display": "show you three ways to save on groceries"
+      },
+      {
+       "id": "L4",
+       "kind": "commitment",
+       "owner": "me",
+       "counterparty": null,
+       "what": "fix the login bug before lunch, it's a token refresh thing",
+       "verb": "fix",
+       "due": null,
+       "due_text": null,
+       "source_segment": "s9",
+       "created_at": 34212.5,
+       "status": "open",
+       "closed_at": null,
+       "closed_by": null,
+       "confidence": 0.85,
+       "history": [
+        "created: keyword 'I'll'"
+       ],
+       "owner_name": "you",
+       "counterparty_name": null,
+       "created_clock": "09:30:12",
+       "closed_clock": null,
+       "display": "fix the login bug before lunch, it's a token refresh thing"
+      },
+      {
+       "id": "L5",
+       "kind": "commitment",
+       "owner": "me",
+       "counterparty": null,
+       "what": "send you the pitch deck by Friday, I just need the new numbers",
+       "verb": "send",
+       "due": null,
+       "due_text": null,
+       "source_segment": "s11",
+       "created_at": 34224.5,
+       "status": "closed",
+       "closed_at": 58200.0,
+       "closed_by": "email to Priya: 'Pitch deck v7'",
+       "confidence": 0.85,
+       "history": [
+        "created: keyword 'I'll'",
+        "closed: email to Priya: 'Pitch deck v7'"
+       ],
+       "owner_name": "you",
+       "counterparty_name": null,
+       "created_clock": "09:30:24",
+       "closed_clock": "16:10:00",
+       "display": "send you the pitch deck by Friday, I just need the new numbers"
+      },
+      {
+       "id": "L6",
+       "kind": "commitment",
+       "owner": "me",
+       "counterparty": null,
+       "what": "set up the staging environment this afternoon",
+       "verb": "set",
+       "due": null,
+       "due_text": null,
+       "source_segment": "s12",
+       "created_at": 34230.0,
+       "status": "open",
+       "closed_at": null,
+       "closed_by": null,
+       "confidence": 0.85,
+       "history": [
+        "created: keyword 'I'll'"
+       ],
+       "owner_name": "you",
+       "counterparty_name": null,
+       "created_clock": "09:30:30",
+       "closed_clock": null,
+       "display": "set up the staging environment this afternoon"
+      },
+      {
+       "id": "L7",
+       "kind": "commitment",
+       "owner": "me",
+       "counterparty": null,
+       "what": "send it tonight",
+       "verb": "send",
+       "due": null,
+       "due_text": null,
+       "source_segment": "s23",
+       "created_at": 46828.5,
+       "status": "open",
+       "closed_at": null,
+       "closed_by": null,
+       "confidence": 0.85,
+       "history": [
+        "created: keyword 'I'll'"
+       ],
+       "owner_name": "you",
+       "counterparty_name": null,
+       "created_clock": "13:00:28",
+       "closed_clock": null,
+       "display": "send it tonight"
+      },
+      {
+       "id": "L8",
+       "kind": "commitment",
+       "owner": "me",
+       "counterparty": null,
+       "what": "Venmo you for last week's dinner",
+       "verb": "venmo",
+       "due": null,
+       "due_text": null,
+       "source_segment": "s24",
+       "created_at": 46834.0,
+       "status": "open",
+       "closed_at": null,
+       "closed_by": null,
+       "confidence": 0.85,
+       "history": [
+        "created: keyword 'I'll'"
+       ],
+       "owner_name": "you",
+       "counterparty_name": null,
+       "created_clock": "13:00:34",
+       "closed_clock": null,
+       "display": "Venmo you for last week's dinner"
+      },
+      {
+       "id": "L9",
+       "kind": "commitment",
+       "owner": "me",
+       "counterparty": null,
+       "what": "order her flowers tomorrow",
+       "verb": "order",
+       "due": null,
+       "due_text": null,
+       "source_segment": "s45",
+       "created_at": 72005.5,
+       "status": "open",
+       "closed_at": null,
+       "closed_by": null,
+       "confidence": 0.85,
+       "history": [
+        "created: keyword 'I'll'"
+       ],
+       "owner_name": "you",
+       "counterparty_name": null,
+       "created_clock": "20:00:06",
+       "closed_clock": null,
+       "display": "order her flowers tomorrow"
+      },
+      {
+       "id": "L10",
+       "kind": "commitment",
+       "owner": "me",
+       "counterparty": null,
+       "what": "send Sam the podcast tomorrow instead",
+       "verb": "send",
+       "due": null,
+       "due_text": null,
+       "source_segment": "s47",
+       "created_at": 74405.0,
+       "status": "open",
+       "closed_at": null,
+       "closed_by": null,
+       "confidence": 0.85,
+       "history": [
+        "created: keyword 'I'll'"
+       ],
+       "owner_name": "you",
+       "counterparty_name": null,
+       "created_clock": "20:40:05",
+       "closed_clock": null,
+       "display": "send Sam the podcast tomorrow instead"
+      },
+      {
+       "id": "L11",
+       "kind": "commitment",
+       "owner": "me",
+       "counterparty": null,
+       "what": "get right on cleaning the garage",
+       "verb": "get",
+       "due": null,
+       "due_text": null,
+       "source_segment": "s48",
+       "created_at": 74705.0,
+       "status": "open",
+       "closed_at": null,
+       "closed_by": null,
+       "confidence": 0.85,
+       "history": [
+        "created: keyword 'I'll'"
+       ],
+       "owner_name": "you",
+       "counterparty_name": null,
+       "created_clock": "20:45:05",
+       "closed_clock": null,
+       "display": "get right on cleaning the garage"
+      },
+      {
+       "id": "L12",
+       "kind": "commitment",
+       "owner": "me",
+       "counterparty": null,
+       "what": "be back",
+       "verb": "be",
+       "due": null,
+       "due_text": null,
+       "source_segment": "s49",
+       "created_at": 75603.0,
+       "status": "open",
+       "closed_at": null,
+       "closed_by": null,
+       "confidence": 0.85,
+       "history": [
+        "created: keyword 'I'll'"
+       ],
+       "owner_name": "you",
+       "counterparty_name": null,
+       "created_clock": "21:00:03",
+       "closed_clock": null,
+       "display": "be back"
+      }
+     ],
+     "skipped": [],
+     "facts": [
+      {
+       "id": "M1",
+       "about": "dev",
+       "fact": "Sorry I was slow yesterday, my migraines have been brutal this week",
+       "source_segment": "s13",
+       "created_at": 34237.5,
+       "needs_confirm": false,
+       "about_name": "Dev",
+       "clock": "09:30:38"
+      },
+      {
+       "id": "M2",
+       "about": "Priya's daughter",
+       "fact": "Also my daughter's recital is on Thursday so I'm out after three",
+       "source_segment": "s14",
+       "created_at": 34246.0,
+       "needs_confirm": false,
+       "about_name": "Priya's daughter",
+       "clock": "09:30:46"
+      },
+      {
+       "id": "M3",
+       "about": "Sam's mom",
+       "fact": "My mom loves peonies by the way, I'm getting her some for her birthday",
+       "source_segment": "s26",
+       "created_at": 46842.0,
+       "needs_confirm": false,
+       "about_name": "Sam's mom",
+       "clock": "13:00:42"
+      },
+      {
+       "id": "M4",
+       "about": "mum",
+       "fact": "Mum's birthday is next Wednesday, I'll order her flowers tomorrow",
+       "source_segment": "s45",
+       "created_at": 72005.5,
+       "needs_confirm": false,
+       "about_name": "Mum",
+       "clock": "20:00:06"
+      }
+     ],
+     "withheld": [],
+     "decisions": [
+      {
+       "id": "news-e1",
+       "kind": "news",
+       "outcome": "spoke",
+       "at": 46831.0,
+       "clock": "13:00:31",
+       "created": "13:00:31",
+       "said": "Your 3pm design review moved to tomorrow at 11, so the afternoon's open.",
+       "text": "Your 3pm design review moved to tomorrow at 11, so the afternoon's open.",
+       "duration": 5.0,
+       "priority": 0.6,
+       "reasons": [
+        "13:00:31 created: calendar change",
+        "naive: spoke as soon as it had something"
+       ],
+       "ledger_id": null,
+       "people": [],
+       "talked_over": [
+        "Sam",
+        "Sam"
+       ]
+      },
+      {
+       "id": "news-e4",
+       "kind": "news",
+       "outcome": "spoke",
+       "at": 63900.0,
+       "clock": "17:45:00",
+       "created": "17:45:00",
+       "said": "Acme replied about the pilot, and it's a yes. Read it when you're out of Focus.",
+       "text": "Acme replied about the pilot, and it's a yes. Read it when you're out of Focus.",
+       "duration": 6.153846153846153,
+       "priority": 0.7,
+       "reasons": [
+        "17:45:00 created: a reply you were waiting on",
+        "naive: spoke as soon as it had something"
+       ],
+       "ledger_id": null,
+       "people": [
+        "acme"
+       ],
+       "talked_over": []
+      }
+     ],
+     "score": {
+      "ledger_recall": 0.4,
+      "ledger_precision": 0.3333333333333333,
+      "status_accuracy": 1.0,
+      "counterparty_accuracy": 0.0,
+      "misattributed": 6,
+      "mind_recall": 1.0,
+      "privacy_leaks": 1,
+      "whisper_recall": 0.0,
+      "whispers": 2,
+      "unrequested_whispers": 2,
+      "talk_over_person": 1,
+      "talk_over_any": 1,
+      "quiet_violations": 1
+     }
+    }
+   }
+  },
+  {
+   "id": "day2_hard_cases",
+   "name": "Thursday: hard cases",
+   "date": "2026-10-15",
+   "heldout": false,
+   "truth": {
+    "ledger": [
+     {
+      "id": "maya",
+      "owner": "jordan",
+      "kind": "waiting_on",
+      "keys": [
+       "maya"
+      ],
+      "status": "open"
+     },
+     {
+      "id": "plants",
+      "owner": "me",
+      "kind": "commitment",
+      "keys": [
+       "plants"
+      ],
+      "status": "closed"
+     },
+     {
+      "id": "bill",
+      "owner": "me",
+      "kind": "commitment",
+      "keys": [
+       "electricity"
+      ],
+      "status": "closed"
+     },
+     {
+      "id": "car",
+      "owner": "me",
+      "kind": "commitment",
+      "counterparty": "spk_9",
+      "keys": [
+       "car"
+      ],
+      "status": "open"
+     },
+     {
+      "id": "keys",
+      "owner": "dev",
+      "kind": "waiting_on",
+      "keys": [
+       "api keys"
+      ],
+      "status": "open"
+     },
+     {
+      "id": "pr",
+      "owner": "me",
+      "kind": "commitment",
+      "counterparty": "priya",
+      "keys": [
+       "pr"
+      ],
+      "status": "open"
+     },
+     {
+      "id": "update",
+      "owner": "me",
+      "kind": "commitment",
+      "keys": [
+       "investor update"
+      ],
+      "status": "open"
+     },
+     {
+      "id": "tell",
+      "owner": "priya",
+      "kind": "waiting_on",
+      "keys": [
+       "tell them"
+      ],
+      "status": "open"
+     }
+    ],
+    "not_my_commitments": [
+     "sister",
+     "maya",
+     "station",
+     "yoga",
+     "show",
+     "flights",
+     "api keys",
+     "tell them"
+    ],
+    "mind": [
+     [
+      "wedding"
+     ]
+    ],
+    "forbidden_memory": [
+     "laid off",
+     "loan"
+    ],
+    "nudges": [
+     {
+      "id": "keys-overdue",
+      "kind": "contextual_loop",
+      "keys": [
+       "api keys"
+      ],
+      "earliest": "15:00:00",
+      "latest": "15:01:00"
+     }
+    ],
+    "quiet": [
+     {
+      "why": "Listening paused",
+      "from": "12:00:00",
+      "to": "12:45:00"
+     }
+    ]
+   },
+   "runs": {
+    "earshot": {
+     "day": {
+      "name": "Thursday: hard cases",
+      "date": "2026-10-15"
+     },
+     "policy": {
+      "name": "earshot",
+      "solo_pause": 4.0,
+      "conv_pause": 2.5,
+      "conv_window": 60.0,
+      "presence_window": 300.0,
+      "cooldown": 480,
+      "hourly_budget": 4,
+      "focus_threshold": 0.9,
+      "max_conv_words": 14,
+      "backchannel_pause": 5.0,
+      "farewell_pause": 1.5,
+      "naive": false
+     },
+     "segments": [
+      {
+       "id": "s1",
+       "start": 28200.0,
+       "end": 28202.69230769231,
+       "who": "jordan",
+       "name": "Jordan",
+       "text": "Can you call your sister about Sunday?",
+       "clock": "07:50:00"
+      },
+      {
+       "id": "s2",
+       "start": 28204.0,
+       "end": 28206.69230769231,
+       "who": "me",
+       "name": "me",
+       "text": "No, I can't today, you call her.",
+       "clock": "07:50:04"
+      },
+      {
+       "id": "s3",
+       "start": 28209.0,
+       "end": 28211.30769230769,
+       "who": "jordan",
+       "name": "Jordan",
+       "text": "Fine, I'll call Maya after work.",
+       "clock": "07:50:09"
+      },
+      {
+       "id": "s4",
+       "start": 28215.0,
+       "end": 28218.46153846154,
+       "who": "me",
+       "name": "me",
+       "text": "If it rains I'll drive you to the station.",
+       "clock": "07:50:15"
+      },
+      {
+       "id": "s5",
+       "start": 28221.0,
+       "end": 28225.23076923077,
+       "who": "me",
+       "name": "me",
+       "text": "I'll water the plants and I'll pay the electricity bill tonight.",
+       "clock": "07:50:21"
+      },
+      {
+       "id": "s6",
+       "start": 28230.0,
+       "end": 28233.846153846152,
+       "who": "me",
+       "name": "me",
+       "text": "I won't make it to yoga tonight, by the way.",
+       "clock": "07:50:30"
+      },
+      {
+       "id": "s7",
+       "start": 30000.0,
+       "end": 30004.615384615383,
+       "who": "media",
+       "name": "media",
+       "text": "Can you believe I'll be doing this show for ten more years?",
+       "clock": "08:20:00"
+      },
+      {
+       "id": "s8",
+       "start": 31200.0,
+       "end": 31203.846153846152,
+       "who": "spk_9",
+       "name": "Barista (unknown voice)",
+       "text": "Hey, can you move your car? You're blocking the van.",
+       "clock": "08:40:00"
+      },
+      {
+       "id": "s9",
+       "start": 31204.0,
+       "end": 31205.2,
+       "who": "me",
+       "name": "me",
+       "text": "Oh, sorry, yes.",
+       "clock": "08:40:04"
+      },
+      {
+       "id": "s10",
+       "start": 32400.0,
+       "end": 32403.076923076922,
+       "who": "dev",
+       "name": "Dev",
+       "text": "I'll send you the API keys before lunch.",
+       "clock": "09:00:00"
+      },
+      {
+       "id": "s11",
+       "start": 32405.0,
+       "end": 32406.2,
+       "who": "me",
+       "name": "me",
+       "text": "Perfect, thanks.",
+       "clock": "09:00:05"
+      },
+      {
+       "id": "s12",
+       "start": 32408.0,
+       "end": 32411.076923076922,
+       "who": "priya",
+       "name": "Priya",
+       "text": "Could you review Dev's PR before the demo?",
+       "clock": "09:00:08"
+      },
+      {
+       "id": "s13",
+       "start": 32413.0,
+       "end": 32414.2,
+       "who": "me",
+       "name": "me",
+       "text": "On it.",
+       "clock": "09:00:13"
+      },
+      {
+       "id": "s14",
+       "start": 32415.0,
+       "end": 32421.53846153846,
+       "who": "priya",
+       "name": "Priya",
+       "text": "Between us, I got laid off from my last job and the loan is still killing me.",
+       "clock": "09:00:15"
+      },
+      {
+       "id": "s15",
+       "start": 32424.0,
+       "end": 32425.53846153846,
+       "who": "me",
+       "name": "me",
+       "text": "That's rough, I'm sorry.",
+       "clock": "09:00:24"
+      },
+      {
+       "id": "s16",
+       "start": 32428.0,
+       "end": 32430.69230769231,
+       "who": "me",
+       "name": "me",
+       "text": "I'll finish the investor update by 3pm.",
+       "clock": "09:00:28"
+      },
+      {
+       "id": "s17",
+       "start": 32433.0,
+       "end": 32437.23076923077,
+       "who": "priya",
+       "name": "Priya",
+       "text": "Should I book the flights for the offsite, or will you?",
+       "clock": "09:00:33"
+      },
+      {
+       "id": "s18",
+       "start": 32439.0,
+       "end": 32442.076923076922,
+       "who": "me",
+       "name": "me",
+       "text": "Should I book them tonight? Let me think.",
+       "clock": "09:00:39"
+      },
+      {
+       "id": "s19",
+       "start": 40500.0,
+       "end": 40503.46153846154,
+       "who": "me",
+       "name": "me",
+       "text": "Actually I'll push the investor update to tomorrow morning.",
+       "clock": "11:15:00"
+      },
+      {
+       "id": "s20",
+       "start": 40800.0,
+       "end": 40803.07692307692,
+       "who": "me",
+       "name": "me",
+       "text": "My therapist thinks I should take more breaks.",
+       "clock": "11:20:00"
+      },
+      {
+       "id": "s21",
+       "start": 54000.0,
+       "end": 54003.07692307692,
+       "who": "dev",
+       "name": "Dev",
+       "text": "Quick one, the staging build is green again.",
+       "clock": "15:00:00"
+      },
+      {
+       "id": "s22",
+       "start": 54004.0,
+       "end": 54005.2,
+       "who": "me",
+       "name": "me",
+       "text": "Nice.",
+       "clock": "15:00:04"
+      },
+      {
+       "id": "s23",
+       "start": 54009.0,
+       "end": 54013.230769230766,
+       "who": "dev",
+       "name": "Dev",
+       "text": "I'm heading out early tomorrow, my sister's wedding is on Saturday.",
+       "clock": "15:00:09"
+      },
+      {
+       "id": "s24",
+       "start": 54016.0,
+       "end": 54017.2,
+       "who": "me",
+       "name": "me",
+       "text": "Congrats to her!",
+       "clock": "15:00:16"
+      },
+      {
+       "id": "s25",
+       "start": 54024.0,
+       "end": 54025.53846153846,
+       "who": "dev",
+       "name": "Dev",
+       "text": "Thanks, see you Monday.",
+       "clock": "15:00:24"
+      },
+      {
+       "id": "s26",
+       "start": 57600.0,
+       "end": 57605.0,
+       "who": "priya",
+       "name": "Priya",
+       "text": "Okay so the demo got moved and the client wants the dashboard first",
+       "clock": "16:00:00"
+      },
+      {
+       "id": "s27",
+       "start": 57605.0,
+       "end": 57611.53846153846,
+       "who": "priya",
+       "name": "Priya",
+       "text": "and then they want the export flow and honestly I think we should cut the onboarding part",
+       "clock": "16:00:05"
+      },
+      {
+       "id": "s28",
+       "start": 57611.0,
+       "end": 57612.2,
+       "who": "me",
+       "name": "me",
+       "text": "Agreed, cut it.",
+       "clock": "16:00:11"
+      },
+      {
+       "id": "s29",
+       "start": 57613.0,
+       "end": 57618.38461538462,
+       "who": "priya",
+       "name": "Priya",
+       "text": "great so I'll tell them and we go with dashboard then export, see you",
+       "clock": "16:00:13"
+      },
+      {
+       "id": "s30",
+       "start": 65400.0,
+       "end": 65401.2,
+       "who": "me",
+       "name": "me",
+       "text": "I paid it.",
+       "clock": "18:10:00"
+      },
+      {
+       "id": "s31",
+       "start": 66000.0,
+       "end": 66002.30769230769,
+       "who": "me",
+       "name": "me",
+       "text": "I didn't water the plants yet.",
+       "clock": "18:20:00"
+      },
+      {
+       "id": "s32",
+       "start": 72000.0,
+       "end": 72001.2,
+       "who": "me",
+       "name": "me",
+       "text": "Watered the plants.",
+       "clock": "20:00:00"
+      }
+     ],
+     "events": [
+      {
+       "id": "e1",
+       "at": 43200.0,
+       "clock": "12:00:00",
+       "kind": "pause_listening",
+       "data": {}
+      },
+      {
+       "id": "e2",
+       "at": 45900.0,
+       "clock": "12:45:00",
+       "kind": "resume_listening",
+       "data": {}
+      }
+     ],
+     "ledger": [
+      {
+       "id": "L1",
+       "kind": "waiting_on",
+       "owner": "jordan",
+       "counterparty": "me",
+       "what": "call Maya after work",
+       "verb": "call",
+       "due": null,
+       "due_text": null,
+       "source_segment": "s3",
+       "created_at": 28213.0,
+       "status": "open",
+       "closed_at": null,
+       "closed_by": null,
+       "confidence": 0.85,
+       "history": [
+        "created: Jordan said it"
+       ],
+       "owner_name": "Jordan",
+       "counterparty_name": "you",
+       "created_clock": "07:50:13",
+       "closed_clock": null,
+       "display": "call Maya after work"
+      },
+      {
+       "id": "L2",
+       "kind": "commitment",
+       "owner": "me",
+       "counterparty": null,
+       "what": "water the plants",
+       "verb": "water",
+       "due": null,
+       "due_text": null,
+       "source_segment": "s5",
+       "created_at": 28227.0,
+       "status": "closed",
+       "closed_at": 72003.0,
+       "closed_by": "heard: \"Watered the plants.\"",
+       "confidence": 0.85,
+       "history": [
+        "created: said it",
+        "closed: heard: \"Watered the plants.\""
+       ],
+       "owner_name": "you",
+       "counterparty_name": null,
+       "created_clock": "07:50:27",
+       "closed_clock": "20:00:03",
+       "display": "water the plants"
+      },
+      {
+       "id": "L3",
+       "kind": "commitment",
+       "owner": "me",
+       "counterparty": null,
+       "what": "pay the electricity bill",
+       "verb": "pay",
+       "due": 75600.0,
+       "due_text": "tonight",
+       "source_segment": "s5",
+       "created_at": 28227.0,
+       "status": "closed",
+       "closed_at": 65403.0,
+       "closed_by": "heard: \"I paid it.\" (only open loop of that kind)",
+       "confidence": 0.6,
+       "history": [
+        "created: said it",
+        "closed: heard: \"I paid it.\" (only open loop of that kind)"
+       ],
+       "owner_name": "you",
+       "counterparty_name": null,
+       "created_clock": "07:50:27",
+       "closed_clock": "18:10:03",
+       "display": "pay the electricity bill"
+      },
+      {
+       "id": "L4",
+       "kind": "commitment",
+       "owner": "me",
+       "counterparty": "spk_9",
+       "what": "move your car",
+       "verb": "move",
+       "due": null,
+       "due_text": null,
+       "source_segment": "s9",
+       "created_at": 31207.0,
+       "status": "open",
+       "closed_at": null,
+       "closed_by": null,
+       "confidence": 0.85,
+       "history": [
+        "created: said yes to Barista (unknown voice)'s request"
+       ],
+       "owner_name": "you",
+       "counterparty_name": "Barista (unknown voice)",
+       "created_clock": "08:40:07",
+       "closed_clock": null,
+       "display": "move your car"
+      },
+      {
+       "id": "L5",
+       "kind": "waiting_on",
+       "owner": "dev",
+       "counterparty": "me",
+       "what": "send you the API keys",
+       "verb": "send",
+       "due": 43200.0,
+       "due_text": "before lunch",
+       "source_segment": "s10",
+       "created_at": 32405.0,
+       "status": "open",
+       "closed_at": null,
+       "closed_by": null,
+       "confidence": 0.85,
+       "history": [
+        "created: Dev said it"
+       ],
+       "owner_name": "Dev",
+       "counterparty_name": "you",
+       "created_clock": "09:00:05",
+       "closed_clock": null,
+       "display": "send you the API keys"
+      },
+      {
+       "id": "L6",
+       "kind": "commitment",
+       "owner": "me",
+       "counterparty": "priya",
+       "what": "review Dev's PR before the demo",
+       "verb": "review",
+       "due": null,
+       "due_text": null,
+       "source_segment": "s13",
+       "created_at": 32416.0,
+       "status": "open",
+       "closed_at": null,
+       "closed_by": null,
+       "confidence": 0.85,
+       "history": [
+        "created: said yes to Priya's request"
+       ],
+       "owner_name": "you",
+       "counterparty_name": "Priya",
+       "created_clock": "09:00:16",
+       "closed_clock": null,
+       "display": "review Dev's PR before the demo"
+      },
+      {
+       "id": "L7",
+       "kind": "commitment",
+       "owner": "me",
+       "counterparty": null,
+       "what": "finish the investor update",
+       "verb": "finish",
+       "due": 126000.0,
+       "due_text": "tomorrow morning",
+       "source_segment": "s16",
+       "created_at": 32432.5,
+       "status": "open",
+       "closed_at": null,
+       "closed_by": null,
+       "confidence": 0.85,
+       "history": [
+        "created: said it",
+        "due moved 'by 3pm' -> 'tomorrow morning' (said it)"
+       ],
+       "owner_name": "you",
+       "counterparty_name": null,
+       "created_clock": "09:00:32",
+       "closed_clock": null,
+       "display": "finish the investor update"
+      },
+      {
+       "id": "L8",
+       "kind": "waiting_on",
+       "owner": "priya",
+       "counterparty": "me",
+       "what": "tell them",
+       "verb": "tell",
+       "due": null,
+       "due_text": null,
+       "source_segment": "s29",
+       "created_at": 57620.0,
+       "status": "open",
+       "closed_at": null,
+       "closed_by": null,
+       "confidence": 0.85,
+       "history": [
+        "created: Priya said it"
+       ],
+       "owner_name": "Priya",
+       "counterparty_name": "you",
+       "created_clock": "16:00:20",
+       "closed_clock": null,
+       "display": "tell them"
+      }
+     ],
+     "skipped": [
+      {
+       "segment": "s2",
+       "speaker": "me",
+       "text": "No, I can't today, you call her.",
+       "reason": "declined Jordan's request to call your sister about"
+      },
+      {
+       "segment": "s3",
+       "speaker": "jordan",
+       "text": "Fine, I'll call Maya after work.",
+       "reason": "not the wearer's promise (Jordan said it) -> waiting-on"
+      },
+      {
+       "segment": "s4",
+       "speaker": "me",
+       "text": "If it rains I'll drive you to the station.",
+       "reason": "conditional ('if ..., I'll')"
+      },
+      {
+       "segment": "s7",
+       "speaker": "media",
+       "text": "Can you believe I'll be doing this show for ten more years?",
+       "reason": "media audio (not a person in the room)"
+      },
+      {
+       "segment": "s10",
+       "speaker": "dev",
+       "text": "I'll send you the API keys before lunch.",
+       "reason": "not the wearer's promise (Dev said it) -> waiting-on"
+      },
+      {
+       "segment": "s18",
+       "speaker": "me",
+       "text": "Let me think.",
+       "reason": "conversational filler ('let me think / let me know')"
+      },
+      {
+       "segment": "s29",
+       "speaker": "priya",
+       "text": "great so I'll tell them and we go with dashboard then export, see you",
+       "reason": "not the wearer's promise (Priya said it) -> waiting-on"
+      }
+     ],
+     "facts": [
+      {
+       "id": "M1",
+       "about": "me",
+       "fact": "My therapist thinks I should take more breaks.",
+       "source_segment": "s20",
+       "created_at": 40805.0,
+       "needs_confirm": true,
+       "about_name": "you",
+       "clock": "11:20:05"
+      },
+      {
+       "id": "M2",
+       "about": "Dev's sister",
+       "fact": "I'm heading out early tomorrow, my sister's wedding is on Saturday",
+       "source_segment": "s23",
+       "created_at": 54015.0,
+       "needs_confirm": false,
+       "about_name": "Dev's sister",
+       "clock": "15:00:15"
+      }
+     ],
+     "withheld": [
+      {
+       "source_segment": "s14",
+       "at": 32423.5,
+       "about": "Priya",
+       "reason": "sensitive (money) about someone other than the wearer: not stored",
+       "clock": "09:00:24"
+      }
+     ],
+     "decisions": [
+      {
+       "id": "ctx-L5-dev",
+       "kind": "contextual_loop",
+       "outcome": "spoke",
+       "at": 54015.0,
+       "clock": "15:00:15",
+       "created": "15:00:00",
+       "said": "Dev still owes you: send you the API keys.",
+       "text": "Dev's here. They said they'd send you the API keys, before lunch, and it's overdue. Worth a quick ask?",
+       "duration": 3.4615384615384612,
+       "priority": 0.5,
+       "reasons": [
+        "15:00:00 created: Dev started talking and L5 is open with them",
+        "15:00:00 hold: Dev is talking",
+        "15:00:04 hold: you are talking",
+        "15:00:09 hold: Dev is talking",
+        "Dev is wrapping up: 1.8s of quiet",
+        "about someone here"
+       ],
+       "ledger_id": "L5",
+       "people": [
+        "Dev"
+       ],
+       "talked_over": []
+      },
+      {
+       "id": "ctx-L6-priya",
+       "kind": "contextual_loop",
+       "outcome": "spoke",
+       "at": 57620.0,
+       "clock": "16:00:20",
+       "created": "16:00:00",
+       "said": "Priya's here. Still open: review Dev's PR before the demo.",
+       "text": "Priya's here. Still open from you: review Dev's PR before the demo.",
+       "duration": 3.846153846153846,
+       "priority": 0.75,
+       "reasons": [
+        "16:00:00 created: Priya started talking and L6 is open with them",
+        "16:00:00 hold: Priya is talking",
+        "16:00:12 hold: you are talking",
+        "16:00:13 hold: Priya is talking",
+        "Priya is wrapping up: 1.6s of quiet",
+        "about someone here"
+       ],
+       "ledger_id": "L6",
+       "people": [
+        "Priya"
+       ],
+       "talked_over": []
+      }
+     ],
+     "score": {
+      "ledger_recall": 1.0,
+      "ledger_precision": 1.0,
+      "status_accuracy": 1.0,
+      "counterparty_accuracy": 1.0,
+      "misattributed": 0,
+      "mind_recall": 1.0,
+      "privacy_leaks": 0,
+      "whisper_recall": 1.0,
+      "whispers": 2,
+      "unrequested_whispers": 1,
+      "talk_over_person": 0,
+      "talk_over_any": 1,
+      "quiet_violations": 0
+     }
+    },
+    "baseline": {
+     "day": {
+      "name": "Thursday: hard cases",
+      "date": "2026-10-15"
+     },
+     "policy": {
+      "name": "baseline",
+      "solo_pause": 4.0,
+      "conv_pause": 2.5,
+      "conv_window": 60.0,
+      "presence_window": 300.0,
+      "cooldown": 480,
+      "hourly_budget": 4,
+      "focus_threshold": 0.9,
+      "max_conv_words": 14,
+      "backchannel_pause": 5.0,
+      "farewell_pause": 1.5,
+      "naive": true
+     },
+     "segments": [
+      {
+       "id": "s1",
+       "start": 28200.0,
+       "end": 28202.69230769231,
+       "who": "jordan",
+       "name": "Jordan",
+       "text": "Can you call your sister about Sunday?",
+       "clock": "07:50:00"
+      },
+      {
+       "id": "s2",
+       "start": 28204.0,
+       "end": 28206.69230769231,
+       "who": "me",
+       "name": "me",
+       "text": "No, I can't today, you call her.",
+       "clock": "07:50:04"
+      },
+      {
+       "id": "s3",
+       "start": 28209.0,
+       "end": 28211.30769230769,
+       "who": "jordan",
+       "name": "Jordan",
+       "text": "Fine, I'll call Maya after work.",
+       "clock": "07:50:09"
+      },
+      {
+       "id": "s4",
+       "start": 28215.0,
+       "end": 28218.46153846154,
+       "who": "me",
+       "name": "me",
+       "text": "If it rains I'll drive you to the station.",
+       "clock": "07:50:15"
+      },
+      {
+       "id": "s5",
+       "start": 28221.0,
+       "end": 28225.23076923077,
+       "who": "me",
+       "name": "me",
+       "text": "I'll water the plants and I'll pay the electricity bill tonight.",
+       "clock": "07:50:21"
+      },
+      {
+       "id": "s6",
+       "start": 28230.0,
+       "end": 28233.846153846152,
+       "who": "me",
+       "name": "me",
+       "text": "I won't make it to yoga tonight, by the way.",
+       "clock": "07:50:30"
+      },
+      {
+       "id": "s7",
+       "start": 30000.0,
+       "end": 30004.615384615383,
+       "who": "media",
+       "name": "media",
+       "text": "Can you believe I'll be doing this show for ten more years?",
+       "clock": "08:20:00"
+      },
+      {
+       "id": "s8",
+       "start": 31200.0,
+       "end": 31203.846153846152,
+       "who": "spk_9",
+       "name": "Barista (unknown voice)",
+       "text": "Hey, can you move your car? You're blocking the van.",
+       "clock": "08:40:00"
+      },
+      {
+       "id": "s9",
+       "start": 31204.0,
+       "end": 31205.2,
+       "who": "me",
+       "name": "me",
+       "text": "Oh, sorry, yes.",
+       "clock": "08:40:04"
+      },
+      {
+       "id": "s10",
+       "start": 32400.0,
+       "end": 32403.076923076922,
+       "who": "dev",
+       "name": "Dev",
+       "text": "I'll send you the API keys before lunch.",
+       "clock": "09:00:00"
+      },
+      {
+       "id": "s11",
+       "start": 32405.0,
+       "end": 32406.2,
+       "who": "me",
+       "name": "me",
+       "text": "Perfect, thanks.",
+       "clock": "09:00:05"
+      },
+      {
+       "id": "s12",
+       "start": 32408.0,
+       "end": 32411.076923076922,
+       "who": "priya",
+       "name": "Priya",
+       "text": "Could you review Dev's PR before the demo?",
+       "clock": "09:00:08"
+      },
+      {
+       "id": "s13",
+       "start": 32413.0,
+       "end": 32414.2,
+       "who": "me",
+       "name": "me",
+       "text": "On it.",
+       "clock": "09:00:13"
+      },
+      {
+       "id": "s14",
+       "start": 32415.0,
+       "end": 32421.53846153846,
+       "who": "priya",
+       "name": "Priya",
+       "text": "Between us, I got laid off from my last job and the loan is still killing me.",
+       "clock": "09:00:15"
+      },
+      {
+       "id": "s15",
+       "start": 32424.0,
+       "end": 32425.53846153846,
+       "who": "me",
+       "name": "me",
+       "text": "That's rough, I'm sorry.",
+       "clock": "09:00:24"
+      },
+      {
+       "id": "s16",
+       "start": 32428.0,
+       "end": 32430.69230769231,
+       "who": "me",
+       "name": "me",
+       "text": "I'll finish the investor update by 3pm.",
+       "clock": "09:00:28"
+      },
+      {
+       "id": "s17",
+       "start": 32433.0,
+       "end": 32437.23076923077,
+       "who": "priya",
+       "name": "Priya",
+       "text": "Should I book the flights for the offsite, or will you?",
+       "clock": "09:00:33"
+      },
+      {
+       "id": "s18",
+       "start": 32439.0,
+       "end": 32442.076923076922,
+       "who": "me",
+       "name": "me",
+       "text": "Should I book them tonight? Let me think.",
+       "clock": "09:00:39"
+      },
+      {
+       "id": "s19",
+       "start": 40500.0,
+       "end": 40503.46153846154,
+       "who": "me",
+       "name": "me",
+       "text": "Actually I'll push the investor update to tomorrow morning.",
+       "clock": "11:15:00"
+      },
+      {
+       "id": "s20",
+       "start": 40800.0,
+       "end": 40803.07692307692,
+       "who": "me",
+       "name": "me",
+       "text": "My therapist thinks I should take more breaks.",
+       "clock": "11:20:00"
+      },
+      {
+       "id": "s21",
+       "start": 54000.0,
+       "end": 54003.07692307692,
+       "who": "dev",
+       "name": "Dev",
+       "text": "Quick one, the staging build is green again.",
+       "clock": "15:00:00"
+      },
+      {
+       "id": "s22",
+       "start": 54004.0,
+       "end": 54005.2,
+       "who": "me",
+       "name": "me",
+       "text": "Nice.",
+       "clock": "15:00:04"
+      },
+      {
+       "id": "s23",
+       "start": 54009.0,
+       "end": 54013.230769230766,
+       "who": "dev",
+       "name": "Dev",
+       "text": "I'm heading out early tomorrow, my sister's wedding is on Saturday.",
+       "clock": "15:00:09"
+      },
+      {
+       "id": "s24",
+       "start": 54016.0,
+       "end": 54017.2,
+       "who": "me",
+       "name": "me",
+       "text": "Congrats to her!",
+       "clock": "15:00:16"
+      },
+      {
+       "id": "s25",
+       "start": 54024.0,
+       "end": 54025.53846153846,
+       "who": "dev",
+       "name": "Dev",
+       "text": "Thanks, see you Monday.",
+       "clock": "15:00:24"
+      },
+      {
+       "id": "s26",
+       "start": 57600.0,
+       "end": 57605.0,
+       "who": "priya",
+       "name": "Priya",
+       "text": "Okay so the demo got moved and the client wants the dashboard first",
+       "clock": "16:00:00"
+      },
+      {
+       "id": "s27",
+       "start": 57605.0,
+       "end": 57611.53846153846,
+       "who": "priya",
+       "name": "Priya",
+       "text": "and then they want the export flow and honestly I think we should cut the onboarding part",
+       "clock": "16:00:05"
+      },
+      {
+       "id": "s28",
+       "start": 57611.0,
+       "end": 57612.2,
+       "who": "me",
+       "name": "me",
+       "text": "Agreed, cut it.",
+       "clock": "16:00:11"
+      },
+      {
+       "id": "s29",
+       "start": 57613.0,
+       "end": 57618.38461538462,
+       "who": "priya",
+       "name": "Priya",
+       "text": "great so I'll tell them and we go with dashboard then export, see you",
+       "clock": "16:00:13"
+      },
+      {
+       "id": "s30",
+       "start": 65400.0,
+       "end": 65401.2,
+       "who": "me",
+       "name": "me",
+       "text": "I paid it.",
+       "clock": "18:10:00"
+      },
+      {
+       "id": "s31",
+       "start": 66000.0,
+       "end": 66002.30769230769,
+       "who": "me",
+       "name": "me",
+       "text": "I didn't water the plants yet.",
+       "clock": "18:20:00"
+      },
+      {
+       "id": "s32",
+       "start": 72000.0,
+       "end": 72001.2,
+       "who": "me",
+       "name": "me",
+       "text": "Watered the plants.",
+       "clock": "20:00:00"
+      }
+     ],
+     "events": [
+      {
+       "id": "e1",
+       "at": 43200.0,
+       "clock": "12:00:00",
+       "kind": "pause_listening",
+       "data": {}
+      },
+      {
+       "id": "e2",
+       "at": 45900.0,
+       "clock": "12:45:00",
+       "kind": "resume_listening",
+       "data": {}
+      }
+     ],
+     "ledger": [
+      {
+       "id": "L1",
+       "kind": "commitment",
+       "owner": "me",
+       "counterparty": null,
+       "what": "call Maya after work",
+       "verb": "call",
+       "due": null,
+       "due_text": null,
+       "source_segment": "s3",
+       "created_at": 28213.0,
+       "status": "open",
+       "closed_at": null,
+       "closed_by": null,
+       "confidence": 0.85,
+       "history": [
+        "created: keyword 'I'll'"
+       ],
+       "owner_name": "you",
+       "counterparty_name": null,
+       "created_clock": "07:50:13",
+       "closed_clock": null,
+       "display": "call Maya after work"
+      },
+      {
+       "id": "L2",
+       "kind": "commitment",
+       "owner": "me",
+       "counterparty": null,
+       "what": "drive you to the station",
+       "verb": "drive",
+       "due": null,
+       "due_text": null,
+       "source_segment": "s4",
+       "created_at": 28220.0,
+       "status": "open",
+       "closed_at": null,
+       "closed_by": null,
+       "confidence": 0.85,
+       "history": [
+        "created: keyword 'I'll'"
+       ],
+       "owner_name": "you",
+       "counterparty_name": null,
+       "created_clock": "07:50:20",
+       "closed_clock": null,
+       "display": "drive you to the station"
+      },
+      {
+       "id": "L3",
+       "kind": "commitment",
+       "owner": "me",
+       "counterparty": null,
+       "what": "water the plants",
+       "verb": "water",
+       "due": null,
+       "due_text": null,
+       "source_segment": "s5",
+       "created_at": 28227.0,
+       "status": "closed",
+       "closed_at": 72003.0,
+       "closed_by": "heard: \"Watered the plants.\"",
+       "confidence": 0.85,
+       "history": [
+        "created: keyword 'I'll'",
+        "closed: heard: \"Watered the plants.\""
+       ],
+       "owner_name": "you",
+       "counterparty_name": null,
+       "created_clock": "07:50:27",
+       "closed_clock": "20:00:03",
+       "display": "water the plants"
+      },
+      {
+       "id": "L4",
+       "kind": "commitment",
+       "owner": "me",
+       "counterparty": null,
+       "what": "pay the electricity bill tonight",
+       "verb": "pay",
+       "due": null,
+       "due_text": null,
+       "source_segment": "s5",
+       "created_at": 28227.0,
+       "status": "closed",
+       "closed_at": 65403.0,
+       "closed_by": "heard: \"I paid it.\" (only open loop of that kind)",
+       "confidence": 0.6,
+       "history": [
+        "created: keyword 'I'll'",
+        "closed: heard: \"I paid it.\" (only open loop of that kind)"
+       ],
+       "owner_name": "you",
+       "counterparty_name": null,
+       "created_clock": "07:50:27",
+       "closed_clock": "18:10:03",
+       "display": "pay the electricity bill tonight"
+      },
+      {
+       "id": "L5",
+       "kind": "commitment",
+       "owner": "me",
+       "counterparty": null,
+       "what": "be doing this show for ten more years?",
+       "verb": "be",
+       "due": null,
+       "due_text": null,
+       "source_segment": "s7",
+       "created_at": 30006.5,
+       "status": "open",
+       "closed_at": null,
+       "closed_by": null,
+       "confidence": 0.85,
+       "history": [
+        "created: keyword 'I'll'"
+       ],
+       "owner_name": "you",
+       "counterparty_name": null,
+       "created_clock": "08:20:06",
+       "closed_clock": null,
+       "display": "be doing this show for ten more years?"
+      },
+      {
+       "id": "L6",
+       "kind": "commitment",
+       "owner": "me",
+       "counterparty": null,
+       "what": "send you the API keys before lunch",
+       "verb": "send",
+       "due": null,
+       "due_text": null,
+       "source_segment": "s10",
+       "created_at": 32405.0,
+       "status": "open",
+       "closed_at": null,
+       "closed_by": null,
+       "confidence": 0.85,
+       "history": [
+        "created: keyword 'I'll'"
+       ],
+       "owner_name": "you",
+       "counterparty_name": null,
+       "created_clock": "09:00:05",
+       "closed_clock": null,
+       "display": "send you the API keys before lunch"
+      },
+      {
+       "id": "L7",
+       "kind": "commitment",
+       "owner": "me",
+       "counterparty": null,
+       "what": "finish the investor update by 3pm",
+       "verb": "finish",
+       "due": null,
+       "due_text": null,
+       "source_segment": "s16",
+       "created_at": 32432.5,
+       "status": "open",
+       "closed_at": null,
+       "closed_by": null,
+       "confidence": 0.85,
+       "history": [
+        "created: keyword 'I'll'"
+       ],
+       "owner_name": "you",
+       "counterparty_name": null,
+       "created_clock": "09:00:32",
+       "closed_clock": null,
+       "display": "finish the investor update by 3pm"
+      },
+      {
+       "id": "L8",
+       "kind": "commitment",
+       "owner": "me",
+       "counterparty": null,
+       "what": "think",
+       "verb": "think",
+       "due": null,
+       "due_text": null,
+       "source_segment": "s18",
+       "created_at": 32444.0,
+       "status": "open",
+       "closed_at": null,
+       "closed_by": null,
+       "confidence": 0.85,
+       "history": [
+        "created: keyword 'I'll'"
+       ],
+       "owner_name": "you",
+       "counterparty_name": null,
+       "created_clock": "09:00:44",
+       "closed_clock": null,
+       "display": "think"
+      },
+      {
+       "id": "L9",
+       "kind": "commitment",
+       "owner": "me",
+       "counterparty": null,
+       "what": "tell them and we go with dashboard then export, see you",
+       "verb": "tell",
+       "due": null,
+       "due_text": null,
+       "source_segment": "s29",
+       "created_at": 57620.0,
+       "status": "open",
+       "closed_at": null,
+       "closed_by": null,
+       "confidence": 0.85,
+       "history": [
+        "created: keyword 'I'll'"
+       ],
+       "owner_name": "you",
+       "counterparty_name": null,
+       "created_clock": "16:00:20",
+       "closed_clock": null,
+       "display": "tell them and we go with dashboard then export, see you"
+      }
+     ],
+     "skipped": [],
+     "facts": [
+      {
+       "id": "M1",
+       "about": "priya",
+       "fact": "Between us, I got laid off from my last job and the loan is still killing me",
+       "source_segment": "s14",
+       "created_at": 32423.5,
+       "needs_confirm": false,
+       "about_name": "Priya",
+       "clock": "09:00:24"
+      },
+      {
+       "id": "M2",
+       "about": "me",
+       "fact": "My therapist thinks I should take more breaks",
+       "source_segment": "s20",
+       "created_at": 40805.0,
+       "needs_confirm": false,
+       "about_name": "you",
+       "clock": "11:20:05"
+      },
+      {
+       "id": "M3",
+       "about": "Dev's sister",
+       "fact": "I'm heading out early tomorrow, my sister's wedding is on Saturday",
+       "source_segment": "s23",
+       "created_at": 54015.0,
+       "needs_confirm": false,
+       "about_name": "Dev's sister",
+       "clock": "15:00:15"
+      }
+     ],
+     "withheld": [],
+     "decisions": [],
+     "score": {
+      "ledger_recall": 0.375,
+      "ledger_precision": 0.3333333333333333,
+      "status_accuracy": 1.0,
+      "counterparty_accuracy": null,
+      "misattributed": 5,
+      "mind_recall": 1.0,
+      "privacy_leaks": 2,
+      "whisper_recall": 0.0,
+      "whispers": 0,
+      "unrequested_whispers": 0,
+      "talk_over_person": 0,
+      "talk_over_any": 0,
+      "quiet_violations": 0
+     }
+    }
+   }
+  },
+  {
+   "id": "day3_heldout_saturday",
+   "name": "Saturday: errands and a family call (held out)",
+   "date": "2026-10-17",
+   "heldout": true,
+   "truth": {
+    "ledger": [
+     {
+      "id": "wifi",
+      "owner": "me",
+      "kind": "commitment",
+      "counterparty": "rohan",
+      "keys": [
+       "wifi"
+      ],
+      "status": "closed"
+     },
+     {
+      "id": "kitchen",
+      "owner": "rohan",
+      "kind": "waiting_on",
+      "keys": [
+       "kitchen"
+      ],
+      "status": "closed"
+     },
+     {
+      "id": "passport",
+      "owner": "me",
+      "kind": "commitment",
+      "keys": [
+       "passport"
+      ],
+      "status": "open"
+     },
+     {
+      "id": "collect",
+      "owner": "me",
+      "kind": "commitment",
+      "counterparty": "spk_2",
+      "keys": [
+       "collect"
+      ],
+      "status": "closed"
+     },
+     {
+      "id": "call-dad",
+      "owner": "me",
+      "kind": "commitment",
+      "counterparty": "dad",
+      "keys": [
+       "call"
+      ],
+      "status": "closed"
+     },
+     {
+      "id": "photos",
+      "owner": "me",
+      "kind": "commitment",
+      "counterparty": "mum",
+      "keys": [
+       "photos"
+      ],
+      "status": "open"
+     },
+     {
+      "id": "portfolio",
+      "owner": "me",
+      "kind": "commitment",
+      "counterparty": "neha",
+      "keys": [
+       "portfolio"
+      ],
+      "status": "open"
+     },
+     {
+      "id": "neha-link",
+      "owner": "neha",
+      "kind": "waiting_on",
+      "keys": [
+       "send"
+      ],
+      "status": "closed"
+     },
+     {
+      "id": "idea",
+      "owner": "me",
+      "kind": "idea",
+      "keys": [
+       "weekly"
+      ],
+      "status": "open"
+     }
+    ],
+    "not_my_commitments": [
+     "kitchen",
+     "next one",
+     "studio",
+     "like button"
+    ],
+    "mind": [
+     [
+      "engagement"
+     ],
+     [
+      "cafe"
+     ]
+    ],
+    "forbidden_memory": [
+     "surgery",
+     "knee"
+    ],
+    "nudges": [
+     {
+      "id": "collect-due",
+      "kind": "deadline",
+      "keys": [
+       "collect"
+      ],
+      "earliest": "15:00:00",
+      "latest": "17:00:00"
+     },
+     {
+      "id": "neha-news",
+      "kind": "news",
+      "keys": [
+       "portfolio"
+      ],
+      "earliest": "16:40:00",
+      "latest": "17:30:00"
+     },
+     {
+      "id": "call-due",
+      "kind": "deadline",
+      "keys": [
+       "call"
+      ],
+      "earliest": "19:00:00",
+      "latest": "21:00:00"
+     }
+    ],
+    "quiet": [
+     {
+      "why": "Listening paused for dinner",
+      "from": "18:00:00",
+      "to": "19:00:00"
+     }
+    ]
+   },
+   "runs": {
+    "earshot": {
+     "day": {
+      "name": "Saturday: errands and a family call (held out)",
+      "date": "2026-10-17"
+     },
+     "policy": {
+      "name": "earshot",
+      "solo_pause": 4.0,
+      "conv_pause": 2.5,
+      "conv_window": 60.0,
+      "presence_window": 300.0,
+      "cooldown": 480,
+      "hourly_budget": 4,
+      "focus_threshold": 0.9,
+      "max_conv_words": 14,
+      "backchannel_pause": 5.0,
+      "farewell_pause": 1.5,
+      "naive": false
+     },
+     "segments": [
+      {
+       "id": "s1",
+       "start": 33000.0,
+       "end": 33005.0,
+       "who": "rohan",
+       "name": "Rohan",
+       "text": "Bro, the wifi bill is due Monday, can you handle it this time?",
+       "clock": "09:10:00"
+      },
+      {
+       "id": "s2",
+       "start": 33005.0,
+       "end": 33006.92307692308,
+       "who": "me",
+       "name": "me",
+       "text": "Yeah I'll pay it tomorrow.",
+       "clock": "09:10:05"
+      },
+      {
+       "id": "s3",
+       "start": 33010.0,
+       "end": 33012.692307692305,
+       "who": "rohan",
+       "name": "Rohan",
+       "text": "Cool, and I'll clean the kitchen later.",
+       "clock": "09:10:10"
+      },
+      {
+       "id": "s4",
+       "start": 33016.0,
+       "end": 33017.2,
+       "who": "me",
+       "name": "me",
+       "text": "Deal.",
+       "clock": "09:10:16"
+      },
+      {
+       "id": "s5",
+       "start": 34200.0,
+       "end": 34204.61538461538,
+       "who": "media",
+       "name": "media",
+       "text": "Smash that like button and I'll see you in the next one.",
+       "clock": "09:30:00"
+      },
+      {
+       "id": "s6",
+       "start": 36000.0,
+       "end": 36003.46153846154,
+       "who": "me",
+       "name": "me",
+       "text": "Need to remember to renew my passport before December.",
+       "clock": "10:00:00"
+      },
+      {
+       "id": "s7",
+       "start": 37800.0,
+       "end": 37803.846153846156,
+       "who": "spk_2",
+       "name": "Shopkeeper (unknown voice)",
+       "text": "Your order will be ready by five, please collect it.",
+       "clock": "10:30:00"
+      },
+      {
+       "id": "s8",
+       "start": 37805.0,
+       "end": 37807.307692307695,
+       "who": "me",
+       "name": "me",
+       "text": "Okay, I'll come by at five.",
+       "clock": "10:30:05"
+      },
+      {
+       "id": "s9",
+       "start": 39600.0,
+       "end": 39601.92307692308,
+       "who": "mum",
+       "name": "Mum",
+       "text": "Beta, did you eat properly?",
+       "clock": "11:00:00"
+      },
+      {
+       "id": "s10",
+       "start": 39604.0,
+       "end": 39605.53846153846,
+       "who": "me",
+       "name": "me",
+       "text": "Yes Mum, I did.",
+       "clock": "11:00:04"
+      },
+      {
+       "id": "s11",
+       "start": 39608.0,
+       "end": 39611.846153846156,
+       "who": "mum",
+       "name": "Mum",
+       "text": "Your dad's knee surgery is on the twentieth, he's nervous.",
+       "clock": "11:00:08"
+      },
+      {
+       "id": "s12",
+       "start": 39615.0,
+       "end": 39618.07692307692,
+       "who": "me",
+       "name": "me",
+       "text": "I'll call him tonight to cheer him up.",
+       "clock": "11:00:15"
+      },
+      {
+       "id": "s13",
+       "start": 39622.0,
+       "end": 39625.07692307692,
+       "who": "mum",
+       "name": "Mum",
+       "text": "And send me the photos from Neha's wedding.",
+       "clock": "11:00:22"
+      },
+      {
+       "id": "s14",
+       "start": 39627.0,
+       "end": 39628.2,
+       "who": "me",
+       "name": "me",
+       "text": "Sure, will do.",
+       "clock": "11:00:27"
+      },
+      {
+       "id": "s15",
+       "start": 39630.0,
+       "end": 39633.846153846156,
+       "who": "mum",
+       "name": "Mum",
+       "text": "Your cousin's engagement is next month, keep the date free.",
+       "clock": "11:00:30"
+      },
+      {
+       "id": "s16",
+       "start": 39640.0,
+       "end": 39641.2,
+       "who": "me",
+       "name": "me",
+       "text": "Okay Mum, bye!",
+       "clock": "11:00:40"
+      },
+      {
+       "id": "s17",
+       "start": 39642.0,
+       "end": 39643.2,
+       "who": "mum",
+       "name": "Mum",
+       "text": "Bye beta.",
+       "clock": "11:00:42"
+      },
+      {
+       "id": "s18",
+       "start": 45000.0,
+       "end": 45003.846153846156,
+       "who": "neha",
+       "name": "Neha",
+       "text": "So I'm thinking of quitting and starting my own studio.",
+       "clock": "12:30:00"
+      },
+      {
+       "id": "s19",
+       "start": 45006.0,
+       "end": 45007.2,
+       "who": "me",
+       "name": "me",
+       "text": "Whoa, that's huge.",
+       "clock": "12:30:06"
+      },
+      {
+       "id": "s20",
+       "start": 45010.0,
+       "end": 45011.92307692308,
+       "who": "neha",
+       "name": "Neha",
+       "text": "Don't tell anyone yet, okay?",
+       "clock": "12:30:10"
+      },
+      {
+       "id": "s21",
+       "start": 45014.0,
+       "end": 45015.2,
+       "who": "me",
+       "name": "me",
+       "text": "Of course.",
+       "clock": "12:30:14"
+      },
+      {
+       "id": "s22",
+       "start": 45018.0,
+       "end": 45021.846153846156,
+       "who": "neha",
+       "name": "Neha",
+       "text": "Also could you look over my portfolio site this week?",
+       "clock": "12:30:18"
+      },
+      {
+       "id": "s23",
+       "start": 45024.0,
+       "end": 45025.92307692308,
+       "who": "me",
+       "name": "me",
+       "text": "Absolutely, send me the link.",
+       "clock": "12:30:24"
+      },
+      {
+       "id": "s24",
+       "start": 45030.0,
+       "end": 45031.53846153846,
+       "who": "neha",
+       "name": "Neha",
+       "text": "I'll send it tonight.",
+       "clock": "12:30:30"
+      },
+      {
+       "id": "s25",
+       "start": 45036.0,
+       "end": 45041.0,
+       "who": "neha",
+       "name": "Neha",
+       "text": "My favourite cafe is that new one on Linking Road, we should go.",
+       "clock": "12:30:36"
+      },
+      {
+       "id": "s26",
+       "start": 45045.0,
+       "end": 45046.92307692308,
+       "who": "me",
+       "name": "me",
+       "text": "Yes! Let's go next weekend.",
+       "clock": "12:30:45"
+      },
+      {
+       "id": "s27",
+       "start": 46800.0,
+       "end": 46803.07692307692,
+       "who": "me",
+       "name": "me",
+       "text": "Idea for the app: a weekly people-you-haven't-talked-to-in-a-while nudge.",
+       "clock": "13:00:00"
+      },
+      {
+       "id": "s28",
+       "start": 61800.0,
+       "end": 61801.53846153846,
+       "who": "me",
+       "name": "me",
+       "text": "Collected the order, finally.",
+       "clock": "17:10:00"
+      },
+      {
+       "id": "s29",
+       "start": 73800.0,
+       "end": 73801.53846153847,
+       "who": "me",
+       "name": "me",
+       "text": "Paid the wifi bill.",
+       "clock": "20:30:00"
+      },
+      {
+       "id": "s30",
+       "start": 78000.0,
+       "end": 78001.92307692308,
+       "who": "me",
+       "name": "me",
+       "text": "Called Dad, he sounds better.",
+       "clock": "21:40:00"
+      },
+      {
+       "id": "s31",
+       "start": 78300.0,
+       "end": 78301.92307692308,
+       "who": "rohan",
+       "name": "Rohan",
+       "text": "Kitchen's clean, by the way.",
+       "clock": "21:45:00"
+      }
+     ],
+     "events": [
+      {
+       "id": "e1",
+       "at": 60000.0,
+       "clock": "16:40:00",
+       "kind": "email_in",
+       "data": {
+        "from": "neha",
+        "subject": "portfolio link",
+        "say": "Neha sent her portfolio link."
+       }
+      },
+      {
+       "id": "e2",
+       "at": 64800.0,
+       "clock": "18:00:00",
+       "kind": "pause_listening",
+       "data": {}
+      },
+      {
+       "id": "e3",
+       "at": 68400.0,
+       "clock": "19:00:00",
+       "kind": "resume_listening",
+       "data": {}
+      }
+     ],
+     "ledger": [
+      {
+       "id": "L1",
+       "kind": "commitment",
+       "owner": "me",
+       "counterparty": "rohan",
+       "what": "handle it this time",
+       "verb": "handle",
+       "due": 172740.0,
+       "due_text": "tomorrow",
+       "source_segment": "s2",
+       "created_at": 33008.5,
+       "status": "open",
+       "closed_at": null,
+       "closed_by": null,
+       "confidence": 0.85,
+       "history": [
+        "created: said yes to Rohan's request"
+       ],
+       "owner_name": "you",
+       "counterparty_name": "Rohan",
+       "created_clock": "09:10:08",
+       "closed_clock": null,
+       "display": "handle it this time"
+      },
+      {
+       "id": "L2",
+       "kind": "waiting_on",
+       "owner": "rohan",
+       "counterparty": "me",
+       "what": "clean the kitchen later",
+       "verb": "clean",
+       "due": null,
+       "due_text": null,
+       "source_segment": "s3",
+       "created_at": 33014.5,
+       "status": "open",
+       "closed_at": null,
+       "closed_by": null,
+       "confidence": 0.85,
+       "history": [
+        "created: Rohan said it"
+       ],
+       "owner_name": "Rohan",
+       "counterparty_name": "you",
+       "created_clock": "09:10:14",
+       "closed_clock": null,
+       "display": "clean the kitchen later"
+      },
+      {
+       "id": "L3",
+       "kind": "commitment",
+       "owner": "me",
+       "counterparty": "spk_2",
+       "what": "collect it",
+       "verb": "collect",
+       "due": null,
+       "due_text": null,
+       "source_segment": "s8",
+       "created_at": 37809.0,
+       "status": "open",
+       "closed_at": null,
+       "closed_by": null,
+       "confidence": 0.85,
+       "history": [
+        "created: said yes to Shopkeeper (unknown voice)'s request"
+       ],
+       "owner_name": "you",
+       "counterparty_name": "Shopkeeper (unknown voice)",
+       "created_clock": "10:30:09",
+       "closed_clock": null,
+       "display": "collect it"
+      },
+      {
+       "id": "L4",
+       "kind": "commitment",
+       "owner": "me",
+       "counterparty": null,
+       "what": "call him to cheer him up",
+       "verb": "call",
+       "due": 75600.0,
+       "due_text": "tonight",
+       "source_segment": "s12",
+       "created_at": 39620.0,
+       "status": "open",
+       "closed_at": null,
+       "closed_by": null,
+       "confidence": 0.85,
+       "history": [
+        "created: said it"
+       ],
+       "owner_name": "you",
+       "counterparty_name": null,
+       "created_clock": "11:00:20",
+       "closed_clock": null,
+       "display": "call him to cheer him up"
+      },
+      {
+       "id": "L5",
+       "kind": "commitment",
+       "owner": "me",
+       "counterparty": "neha",
+       "what": "look over Neha's portfolio site this week",
+       "verb": "look",
+       "due": null,
+       "due_text": null,
+       "source_segment": "s23",
+       "created_at": 45027.5,
+       "status": "open",
+       "closed_at": null,
+       "closed_by": null,
+       "confidence": 0.85,
+       "history": [
+        "created: said yes to Neha's request"
+       ],
+       "owner_name": "you",
+       "counterparty_name": "Neha",
+       "created_clock": "12:30:28",
+       "closed_clock": null,
+       "display": "look over Neha's portfolio site this week"
+      },
+      {
+       "id": "L6",
+       "kind": "idea",
+       "owner": "me",
+       "counterparty": null,
+       "what": "for the app: a weekly people-you-haven't-talked-to-in-a-while nudge",
+       "verb": "for",
+       "due": null,
+       "due_text": null,
+       "source_segment": "s27",
+       "created_at": 46805.0,
+       "status": "open",
+       "closed_at": null,
+       "closed_by": null,
+       "confidence": 0.7,
+       "history": [
+        "created: thinking aloud, alone"
+       ],
+       "owner_name": "you",
+       "counterparty_name": null,
+       "created_clock": "13:00:05",
+       "closed_clock": null,
+       "display": "for the app: a weekly people-you-haven't-talked-to-in-a-while nudge"
+      }
+     ],
+     "skipped": [
+      {
+       "segment": "s3",
+       "speaker": "rohan",
+       "text": "I'll clean the kitchen later.",
+       "reason": "not the wearer's promise (Rohan said it) -> waiting-on"
+      },
+      {
+       "segment": "s5",
+       "speaker": "media",
+       "text": "Smash that like button and I'll see you in the next one.",
+       "reason": "media audio (not a person in the room)"
+      }
+     ],
+     "facts": [
+      {
+       "id": "M1",
+       "about": "neha",
+       "fact": "And send me the photos from Neha's wedding",
+       "source_segment": "s13",
+       "created_at": 39627.0,
+       "needs_confirm": false,
+       "about_name": "Neha",
+       "clock": "11:00:27"
+      }
+     ],
+     "withheld": [
+      {
+       "source_segment": "s11",
+       "at": 39613.5,
+       "about": "Dad",
+       "reason": "sensitive (health) about someone other than the wearer: not stored",
+       "clock": "11:00:14"
+      }
+     ],
+     "decisions": [
+      {
+       "id": "due-L4",
+       "kind": "deadline",
+       "outcome": "spoke",
+       "at": 68400.0,
+       "clock": "19:00:00",
+       "created": "19:00:00",
+       "said": "Heads up: you said you'd call him to cheer him up, tonight. Still open.",
+       "text": "Heads up: you said you'd call him to cheer him up, tonight. Still open.",
+       "duration": 5.384615384615384,
+       "priority": 0.65,
+       "reasons": [
+        "19:00:00 created: due tonight and not closed",
+        "quiet for 1h 49m, nobody else around"
+       ],
+       "ledger_id": "L4",
+       "people": [],
+       "talked_over": []
+      },
+      {
+       "id": "ctx-L1-rohan",
+       "kind": "contextual_loop",
+       "outcome": "spoke",
+       "at": 78304.5,
+       "clock": "21:45:04",
+       "created": "21:45:00",
+       "said": "Rohan's here. Still open: handle it this time, tomorrow.",
+       "text": "Rohan's here. Still open from you: handle it this time, tomorrow.",
+       "duration": 3.4615384615384612,
+       "priority": 0.75,
+       "reasons": [
+        "21:45:00 created: Rohan started talking and L1 is open with them",
+        "21:45:00 hold: Rohan is talking",
+        "lull: 2.6s of quiet",
+        "about someone here"
+       ],
+       "ledger_id": "L1",
+       "people": [
+        "Rohan"
+       ],
+       "talked_over": []
+      }
+     ],
+     "score": {
+      "ledger_recall": 0.5555555555555556,
+      "ledger_precision": 0.8333333333333334,
+      "status_accuracy": 0.4,
+      "counterparty_accuracy": 0.6666666666666666,
+      "misattributed": 0,
+      "mind_recall": 0.0,
+      "privacy_leaks": 0,
+      "whisper_recall": 0.3333333333333333,
+      "whispers": 2,
+      "unrequested_whispers": 1,
+      "talk_over_person": 0,
+      "talk_over_any": 0,
+      "quiet_violations": 0
+     }
+    },
+    "baseline": {
+     "day": {
+      "name": "Saturday: errands and a family call (held out)",
+      "date": "2026-10-17"
+     },
+     "policy": {
+      "name": "baseline",
+      "solo_pause": 4.0,
+      "conv_pause": 2.5,
+      "conv_window": 60.0,
+      "presence_window": 300.0,
+      "cooldown": 480,
+      "hourly_budget": 4,
+      "focus_threshold": 0.9,
+      "max_conv_words": 14,
+      "backchannel_pause": 5.0,
+      "farewell_pause": 1.5,
+      "naive": true
+     },
+     "segments": [
+      {
+       "id": "s1",
+       "start": 33000.0,
+       "end": 33005.0,
+       "who": "rohan",
+       "name": "Rohan",
+       "text": "Bro, the wifi bill is due Monday, can you handle it this time?",
+       "clock": "09:10:00"
+      },
+      {
+       "id": "s2",
+       "start": 33005.0,
+       "end": 33006.92307692308,
+       "who": "me",
+       "name": "me",
+       "text": "Yeah I'll pay it tomorrow.",
+       "clock": "09:10:05"
+      },
+      {
+       "id": "s3",
+       "start": 33010.0,
+       "end": 33012.692307692305,
+       "who": "rohan",
+       "name": "Rohan",
+       "text": "Cool, and I'll clean the kitchen later.",
+       "clock": "09:10:10"
+      },
+      {
+       "id": "s4",
+       "start": 33016.0,
+       "end": 33017.2,
+       "who": "me",
+       "name": "me",
+       "text": "Deal.",
+       "clock": "09:10:16"
+      },
+      {
+       "id": "s5",
+       "start": 34200.0,
+       "end": 34204.61538461538,
+       "who": "media",
+       "name": "media",
+       "text": "Smash that like button and I'll see you in the next one.",
+       "clock": "09:30:00"
+      },
+      {
+       "id": "s6",
+       "start": 36000.0,
+       "end": 36003.46153846154,
+       "who": "me",
+       "name": "me",
+       "text": "Need to remember to renew my passport before December.",
+       "clock": "10:00:00"
+      },
+      {
+       "id": "s7",
+       "start": 37800.0,
+       "end": 37803.846153846156,
+       "who": "spk_2",
+       "name": "Shopkeeper (unknown voice)",
+       "text": "Your order will be ready by five, please collect it.",
+       "clock": "10:30:00"
+      },
+      {
+       "id": "s8",
+       "start": 37805.0,
+       "end": 37807.307692307695,
+       "who": "me",
+       "name": "me",
+       "text": "Okay, I'll come by at five.",
+       "clock": "10:30:05"
+      },
+      {
+       "id": "s9",
+       "start": 39600.0,
+       "end": 39601.92307692308,
+       "who": "mum",
+       "name": "Mum",
+       "text": "Beta, did you eat properly?",
+       "clock": "11:00:00"
+      },
+      {
+       "id": "s10",
+       "start": 39604.0,
+       "end": 39605.53846153846,
+       "who": "me",
+       "name": "me",
+       "text": "Yes Mum, I did.",
+       "clock": "11:00:04"
+      },
+      {
+       "id": "s11",
+       "start": 39608.0,
+       "end": 39611.846153846156,
+       "who": "mum",
+       "name": "Mum",
+       "text": "Your dad's knee surgery is on the twentieth, he's nervous.",
+       "clock": "11:00:08"
+      },
+      {
+       "id": "s12",
+       "start": 39615.0,
+       "end": 39618.07692307692,
+       "who": "me",
+       "name": "me",
+       "text": "I'll call him tonight to cheer him up.",
+       "clock": "11:00:15"
+      },
+      {
+       "id": "s13",
+       "start": 39622.0,
+       "end": 39625.07692307692,
+       "who": "mum",
+       "name": "Mum",
+       "text": "And send me the photos from Neha's wedding.",
+       "clock": "11:00:22"
+      },
+      {
+       "id": "s14",
+       "start": 39627.0,
+       "end": 39628.2,
+       "who": "me",
+       "name": "me",
+       "text": "Sure, will do.",
+       "clock": "11:00:27"
+      },
+      {
+       "id": "s15",
+       "start": 39630.0,
+       "end": 39633.846153846156,
+       "who": "mum",
+       "name": "Mum",
+       "text": "Your cousin's engagement is next month, keep the date free.",
+       "clock": "11:00:30"
+      },
+      {
+       "id": "s16",
+       "start": 39640.0,
+       "end": 39641.2,
+       "who": "me",
+       "name": "me",
+       "text": "Okay Mum, bye!",
+       "clock": "11:00:40"
+      },
+      {
+       "id": "s17",
+       "start": 39642.0,
+       "end": 39643.2,
+       "who": "mum",
+       "name": "Mum",
+       "text": "Bye beta.",
+       "clock": "11:00:42"
+      },
+      {
+       "id": "s18",
+       "start": 45000.0,
+       "end": 45003.846153846156,
+       "who": "neha",
+       "name": "Neha",
+       "text": "So I'm thinking of quitting and starting my own studio.",
+       "clock": "12:30:00"
+      },
+      {
+       "id": "s19",
+       "start": 45006.0,
+       "end": 45007.2,
+       "who": "me",
+       "name": "me",
+       "text": "Whoa, that's huge.",
+       "clock": "12:30:06"
+      },
+      {
+       "id": "s20",
+       "start": 45010.0,
+       "end": 45011.92307692308,
+       "who": "neha",
+       "name": "Neha",
+       "text": "Don't tell anyone yet, okay?",
+       "clock": "12:30:10"
+      },
+      {
+       "id": "s21",
+       "start": 45014.0,
+       "end": 45015.2,
+       "who": "me",
+       "name": "me",
+       "text": "Of course.",
+       "clock": "12:30:14"
+      },
+      {
+       "id": "s22",
+       "start": 45018.0,
+       "end": 45021.846153846156,
+       "who": "neha",
+       "name": "Neha",
+       "text": "Also could you look over my portfolio site this week?",
+       "clock": "12:30:18"
+      },
+      {
+       "id": "s23",
+       "start": 45024.0,
+       "end": 45025.92307692308,
+       "who": "me",
+       "name": "me",
+       "text": "Absolutely, send me the link.",
+       "clock": "12:30:24"
+      },
+      {
+       "id": "s24",
+       "start": 45030.0,
+       "end": 45031.53846153846,
+       "who": "neha",
+       "name": "Neha",
+       "text": "I'll send it tonight.",
+       "clock": "12:30:30"
+      },
+      {
+       "id": "s25",
+       "start": 45036.0,
+       "end": 45041.0,
+       "who": "neha",
+       "name": "Neha",
+       "text": "My favourite cafe is that new one on Linking Road, we should go.",
+       "clock": "12:30:36"
+      },
+      {
+       "id": "s26",
+       "start": 45045.0,
+       "end": 45046.92307692308,
+       "who": "me",
+       "name": "me",
+       "text": "Yes! Let's go next weekend.",
+       "clock": "12:30:45"
+      },
+      {
+       "id": "s27",
+       "start": 46800.0,
+       "end": 46803.07692307692,
+       "who": "me",
+       "name": "me",
+       "text": "Idea for the app: a weekly people-you-haven't-talked-to-in-a-while nudge.",
+       "clock": "13:00:00"
+      },
+      {
+       "id": "s28",
+       "start": 61800.0,
+       "end": 61801.53846153846,
+       "who": "me",
+       "name": "me",
+       "text": "Collected the order, finally.",
+       "clock": "17:10:00"
+      },
+      {
+       "id": "s29",
+       "start": 73800.0,
+       "end": 73801.53846153847,
+       "who": "me",
+       "name": "me",
+       "text": "Paid the wifi bill.",
+       "clock": "20:30:00"
+      },
+      {
+       "id": "s30",
+       "start": 78000.0,
+       "end": 78001.92307692308,
+       "who": "me",
+       "name": "me",
+       "text": "Called Dad, he sounds better.",
+       "clock": "21:40:00"
+      },
+      {
+       "id": "s31",
+       "start": 78300.0,
+       "end": 78301.92307692308,
+       "who": "rohan",
+       "name": "Rohan",
+       "text": "Kitchen's clean, by the way.",
+       "clock": "21:45:00"
+      }
+     ],
+     "events": [
+      {
+       "id": "e1",
+       "at": 60000.0,
+       "clock": "16:40:00",
+       "kind": "email_in",
+       "data": {
+        "from": "neha",
+        "subject": "portfolio link",
+        "say": "Neha sent her portfolio link."
+       }
+      },
+      {
+       "id": "e2",
+       "at": 64800.0,
+       "clock": "18:00:00",
+       "kind": "pause_listening",
+       "data": {}
+      },
+      {
+       "id": "e3",
+       "at": 68400.0,
+       "clock": "19:00:00",
+       "kind": "resume_listening",
+       "data": {}
+      }
+     ],
+     "ledger": [
+      {
+       "id": "L1",
+       "kind": "commitment",
+       "owner": "me",
+       "counterparty": null,
+       "what": "pay it tomorrow",
+       "verb": "pay",
+       "due": null,
+       "due_text": null,
+       "source_segment": "s2",
+       "created_at": 33008.5,
+       "status": "open",
+       "closed_at": null,
+       "closed_by": null,
+       "confidence": 0.85,
+       "history": [
+        "created: keyword 'I'll'"
+       ],
+       "owner_name": "you",
+       "counterparty_name": null,
+       "created_clock": "09:10:08",
+       "closed_clock": null,
+       "display": "pay it tomorrow"
+      },
+      {
+       "id": "L2",
+       "kind": "commitment",
+       "owner": "me",
+       "counterparty": null,
+       "what": "clean the kitchen later",
+       "verb": "clean",
+       "due": null,
+       "due_text": null,
+       "source_segment": "s3",
+       "created_at": 33014.5,
+       "status": "open",
+       "closed_at": null,
+       "closed_by": null,
+       "confidence": 0.85,
+       "history": [
+        "created: keyword 'I'll'"
+       ],
+       "owner_name": "you",
+       "counterparty_name": null,
+       "created_clock": "09:10:14",
+       "closed_clock": null,
+       "display": "clean the kitchen later"
+      },
+      {
+       "id": "L3",
+       "kind": "commitment",
+       "owner": "me",
+       "counterparty": null,
+       "what": "see you in the next one",
+       "verb": "see",
+       "due": null,
+       "due_text": null,
+       "source_segment": "s5",
+       "created_at": 34206.5,
+       "status": "open",
+       "closed_at": null,
+       "closed_by": null,
+       "confidence": 0.85,
+       "history": [
+        "created: keyword 'I'll'"
+       ],
+       "owner_name": "you",
+       "counterparty_name": null,
+       "created_clock": "09:30:06",
+       "closed_clock": null,
+       "display": "see you in the next one"
+      },
+      {
+       "id": "L4",
+       "kind": "commitment",
+       "owner": "me",
+       "counterparty": null,
+       "what": "come by at five",
+       "verb": "come",
+       "due": null,
+       "due_text": null,
+       "source_segment": "s8",
+       "created_at": 37809.0,
+       "status": "open",
+       "closed_at": null,
+       "closed_by": null,
+       "confidence": 0.85,
+       "history": [
+        "created: keyword 'I'll'"
+       ],
+       "owner_name": "you",
+       "counterparty_name": null,
+       "created_clock": "10:30:09",
+       "closed_clock": null,
+       "display": "come by at five"
+      },
+      {
+       "id": "L5",
+       "kind": "commitment",
+       "owner": "me",
+       "counterparty": null,
+       "what": "call him tonight to cheer him up",
+       "verb": "call",
+       "due": null,
+       "due_text": null,
+       "source_segment": "s12",
+       "created_at": 39620.0,
+       "status": "open",
+       "closed_at": null,
+       "closed_by": null,
+       "confidence": 0.85,
+       "history": [
+        "created: keyword 'I'll'"
+       ],
+       "owner_name": "you",
+       "counterparty_name": null,
+       "created_clock": "11:00:20",
+       "closed_clock": null,
+       "display": "call him tonight to cheer him up"
+      },
+      {
+       "id": "L6",
+       "kind": "commitment",
+       "owner": "me",
+       "counterparty": null,
+       "what": "send it tonight",
+       "verb": "send",
+       "due": null,
+       "due_text": null,
+       "source_segment": "s24",
+       "created_at": 45033.5,
+       "status": "open",
+       "closed_at": null,
+       "closed_by": null,
+       "confidence": 0.85,
+       "history": [
+        "created: keyword 'I'll'"
+       ],
+       "owner_name": "you",
+       "counterparty_name": null,
+       "created_clock": "12:30:34",
+       "closed_clock": null,
+       "display": "send it tonight"
+      }
+     ],
+     "skipped": [],
+     "facts": [
+      {
+       "id": "M1",
+       "about": "dad",
+       "fact": "Your dad's knee surgery is on the twentieth, he's nervous",
+       "source_segment": "s11",
+       "created_at": 39613.5,
+       "needs_confirm": false,
+       "about_name": "Dad",
+       "clock": "11:00:14"
+      },
+      {
+       "id": "M2",
+       "about": "neha",
+       "fact": "And send me the photos from Neha's wedding",
+       "source_segment": "s13",
+       "created_at": 39627.0,
+       "needs_confirm": false,
+       "about_name": "Neha",
+       "clock": "11:00:27"
+      }
+     ],
+     "withheld": [],
+     "decisions": [],
+     "score": {
+      "ledger_recall": 0.1111111111111111,
+      "ledger_precision": 0.16666666666666666,
+      "status_accuracy": 0.0,
+      "counterparty_accuracy": 0.0,
+      "misattributed": 2,
+      "mind_recall": 0.0,
+      "privacy_leaks": 2,
+      "whisper_recall": 0.0,
+      "whispers": 0,
+      "unrequested_whispers": 0,
+      "talk_over_person": 0,
+      "talk_over_any": 0,
+      "quiet_violations": 0
+     }
+    }
+   }
+  }
+ ]
+}

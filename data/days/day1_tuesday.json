@@ -1,0 +1,105 @@
+{
+  "name": "Tuesday: standup, lunch, deep work",
+  "date": "2026-10-13",
+  "weekday": 1,
+  "people": {
+    "jordan": {"name": "Jordan", "aliases": ["jordan", "babe"]},
+    "priya": {"name": "Priya", "aliases": ["priya"]},
+    "dev": {"name": "Dev", "aliases": ["dev"]},
+    "sam": {"name": "Sam", "aliases": ["sam"]},
+    "mum": {"name": "Mum", "aliases": ["mum", "mom"]},
+    "spk_4": {"name": "New hire (unknown voice)", "aliases": []}
+  },
+  "segments": [
+    {"at": "08:05:00", "who": "jordan", "text": "Morning. Can you pick up oat milk on the way home tonight?"},
+    {"at": "08:05:06", "who": "me", "text": "Yeah, sure."},
+    {"at": "08:05:10", "who": "jordan", "text": "Thanks. I'll book the Thai place for Saturday, Mira's coming too."},
+    {"at": "08:05:18", "who": "me", "text": "Nice. Oh, and I'll call the plumber about the sink today."},
+    {"at": "08:05:25", "who": "jordan", "text": "Good, it kept me up half the night."},
+    {"at": "08:06:00", "who": "media", "text": "Coming up after the break, I'll show you three ways to save on groceries."},
+    {"at": "08:06:20", "who": "me", "text": "I should probably start running again at some point."},
+
+    {"at": "09:30:00", "who": "priya", "text": "Okay quick standup. Dev, where are we on the login bug?"},
+    {"at": "09:30:06", "who": "dev", "text": "I'll fix the login bug before lunch, it's a token refresh thing."},
+    {"at": "09:30:13", "who": "priya", "text": "Great. And the investor deck?"},
+    {"at": "09:30:17", "who": "me", "text": "Priya, I'll send you the pitch deck by Friday, I just need the new numbers."},
+    {"at": "09:30:25", "who": "spk_4", "text": "I'll set up the staging environment this afternoon."},
+    {"at": "09:30:31", "who": "dev", "text": "Sorry I was slow yesterday, my migraines have been brutal this week."},
+    {"at": "09:30:39", "who": "priya", "text": "No worries. Also my daughter's recital is on Thursday so I'm out after three."},
+    {"at": "09:30:48", "who": "me", "text": "Got it."},
+
+    {"at": "11:02:00", "who": "me", "text": "Okay, idea: what if onboarding asked people to name three friends they talk to most, so the memory starts with their people."},
+    {"at": "11:02:25", "who": "me", "text": "Hmm. Write that down later."},
+
+    {"at": "13:00:00", "who": "sam", "text": "You have to try the dumplings here."},
+    {"at": "13:00:04", "who": "me", "text": "I've heard. How was the trip?"},
+    {"at": "13:00:08", "who": "sam", "text": "Amazing. Lisbon is unreal, the food, the hills, everything."},
+    {"at": "13:00:14", "who": "me", "text": "Jealous. Did you do the tram?"},
+    {"at": "13:00:18", "who": "sam", "text": "Twice. Oh, and can you send me that podcast you mentioned?"},
+    {"at": "13:00:25", "who": "me", "text": "Yeah, I'll send it tonight."},
+    {"at": "13:00:29", "who": "sam", "text": "Also I'll Venmo you for last week's dinner."},
+    {"at": "13:00:33", "who": "me", "text": "No rush."},
+    {"at": "13:00:35", "who": "sam", "text": "My mom loves peonies by the way, I'm getting her some for her birthday."},
+    {"at": "13:00:41", "who": "me", "text": "Ha, so does mine."},
+    {"at": "13:00:44", "who": "sam", "text": "Anyway, work's been insane, we're hiring like crazy."},
+    {"at": "13:00:49", "who": "me", "text": "Same here, honestly."},
+    {"at": "13:00:52", "who": "sam", "text": "Want to split the noodles too?"},
+    {"at": "13:00:55", "who": "me", "text": "Obviously."},
+    {"at": "13:01:00", "who": "sam", "text": "The guy at the counter remembered my order, that's how often I come here."},
+    {"at": "13:01:06", "who": "me", "text": "That's a little sad."},
+    {"at": "13:01:09", "who": "sam", "text": "It's a lot sad. Okay, I have to run, good to see you."},
+    {"at": "13:01:15", "who": "me", "text": "You too, safe flight next week."},
+
+    {"at": "15:40:00", "who": "priya", "text": "Hey! Running to grab coffee, want anything?"},
+    {"at": "15:40:05", "who": "me", "text": "I'm good, thanks."},
+    {"at": "15:40:08", "who": "priya", "text": "Cool. Oh the board call got moved, did you see?"},
+    {"at": "15:40:13", "who": "me", "text": "Yeah I saw."},
+    {"at": "15:40:25", "who": "priya", "text": "Okay, see you in a bit."},
+
+    {"at": "18:50:00", "who": "me", "text": "Called the plumber, he's coming Thursday morning."},
+    {"at": "19:20:00", "who": "me", "text": "Got the oat milk."},
+    {"at": "19:40:00", "who": "jordan", "text": "Did you get the oat milk?"},
+    {"at": "19:40:04", "who": "me", "text": "Yep, it's in the fridge."},
+    {"at": "20:00:00", "who": "me", "text": "Mum's birthday is next Wednesday, I'll order her flowers tomorrow."},
+    {"at": "20:30:00", "who": "me", "text": "Still thinking about onboarding, asking people to name their friends first feels right."},
+    {"at": "20:40:00", "who": "me", "text": "Actually I'll send Sam the podcast tomorrow instead."},
+    {"at": "20:45:00", "who": "me", "text": "Oh sure, I'll get right on cleaning the garage."},
+    {"at": "21:00:00", "who": "media", "text": "I'll be back."}
+  ],
+  "events": [
+    {"at": "13:00:31", "kind": "calendar_change", "data": {"title": "3pm design review", "to": "tomorrow 11:00", "say": "Your 3pm design review moved to tomorrow at 11, so the afternoon's open."}},
+    {"at": "16:10:00", "kind": "email_sent", "data": {"to": "priya", "subject": "Pitch deck v7"}},
+    {"at": "17:00:00", "kind": "focus_on"},
+    {"at": "17:45:00", "kind": "email_in", "data": {"from": "acme", "subject": "Pilot", "awaited": true, "say": "Acme replied about the pilot, and it's a yes. Read it when you're out of Focus."}},
+    {"at": "18:30:00", "kind": "focus_off"}
+  ],
+  "truth": {
+    "ledger": [
+      {"id": "oat", "owner": "me", "kind": "commitment", "counterparty": "jordan", "keys": ["oat"], "status": "closed"},
+      {"id": "plumber", "owner": "me", "kind": "commitment", "keys": ["plumber"], "status": "closed"},
+      {"id": "thai", "owner": "jordan", "kind": "waiting_on", "keys": ["thai"], "status": "open"},
+      {"id": "login", "owner": "dev", "kind": "waiting_on", "keys": ["login"], "status": "open"},
+      {"id": "deck", "owner": "me", "kind": "commitment", "counterparty": "priya", "keys": ["deck"], "status": "closed"},
+      {"id": "staging", "owner": "spk_4", "kind": "waiting_on", "keys": ["staging"], "status": "open"},
+      {"id": "podcast", "owner": "me", "kind": "commitment", "counterparty": "sam", "keys": ["podcast"], "status": "open"},
+      {"id": "dinner", "owner": "sam", "kind": "waiting_on", "keys": ["dinner"], "status": "open"},
+      {"id": "flowers", "owner": "me", "kind": "commitment", "counterparty": "mum", "keys": ["flowers"], "status": "open"},
+      {"id": "idea", "owner": "me", "kind": "idea", "keys": ["onboarding"], "status": "open"}
+    ],
+    "not_my_commitments": ["running", "garage", "groceries", "back", "staging", "login", "thai"],
+    "mind": [["recital"], ["peonies"], ["birthday", "wednesday"]],
+    "forbidden_memory": ["migraine"],
+    "nudges": [
+      {"id": "deck-priya", "kind": "contextual_loop", "keys": ["deck"], "earliest": "15:40:00", "latest": "15:41:00"},
+      {"id": "calendar", "kind": "news", "keys": ["design review"], "earliest": "13:01:00", "latest": "14:30:00"},
+      {"id": "acme", "kind": "news", "keys": ["acme"], "earliest": "18:30:00", "latest": "19:00:00"},
+      {"id": "plumber-due", "kind": "deadline", "keys": ["plumber"], "earliest": "18:00:00", "latest": "18:50:00"},
+      {"id": "oat-due", "kind": "deadline", "keys": ["oat"], "earliest": "19:00:00", "latest": "19:20:00"},
+      {"id": "podcast-due", "kind": "deadline", "keys": ["podcast"], "earliest": "19:00:00", "latest": "21:00:00"},
+      {"id": "idea", "kind": "idea_resurface", "keys": ["onboarding"], "earliest": "20:30:00", "latest": "20:40:00"}
+    ],
+    "quiet": [
+      {"why": "Focus block", "from": "17:00:00", "to": "18:30:00"}
+    ]
+  }
+}

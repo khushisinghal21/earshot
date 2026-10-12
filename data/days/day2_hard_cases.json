@@ -1,0 +1,323 @@
+{
+  "name": "Thursday: hard cases",
+  "date": "2026-10-15",
+  "weekday": 3,
+  "people": {
+    "jordan": {
+      "name": "Jordan",
+      "aliases": [
+        "jordan"
+      ]
+    },
+    "priya": {
+      "name": "Priya",
+      "aliases": [
+        "priya"
+      ]
+    },
+    "dev": {
+      "name": "Dev",
+      "aliases": [
+        "dev"
+      ]
+    },
+    "sister": {
+      "name": "Maya",
+      "aliases": [
+        "maya",
+        "sister"
+      ]
+    },
+    "spk_9": {
+      "name": "Barista (unknown voice)",
+      "aliases": []
+    }
+  },
+  "segments": [
+    {
+      "at": "07:50:00",
+      "who": "jordan",
+      "text": "Can you call your sister about Sunday?"
+    },
+    {
+      "at": "07:50:04",
+      "who": "me",
+      "text": "No, I can't today, you call her."
+    },
+    {
+      "at": "07:50:09",
+      "who": "jordan",
+      "text": "Fine, I'll call Maya after work."
+    },
+    {
+      "at": "07:50:15",
+      "who": "me",
+      "text": "If it rains I'll drive you to the station."
+    },
+    {
+      "at": "07:50:21",
+      "who": "me",
+      "text": "I'll water the plants and I'll pay the electricity bill tonight."
+    },
+    {
+      "at": "07:50:30",
+      "who": "me",
+      "text": "I won't make it to yoga tonight, by the way."
+    },
+    {
+      "at": "08:20:00",
+      "who": "media",
+      "text": "Can you believe I'll be doing this show for ten more years?"
+    },
+    {
+      "at": "08:40:00",
+      "who": "spk_9",
+      "text": "Hey, can you move your car? You're blocking the van."
+    },
+    {
+      "at": "08:40:04",
+      "who": "me",
+      "text": "Oh, sorry, yes."
+    },
+    {
+      "at": "09:00:00",
+      "who": "dev",
+      "text": "I'll send you the API keys before lunch."
+    },
+    {
+      "at": "09:00:05",
+      "who": "me",
+      "text": "Perfect, thanks."
+    },
+    {
+      "at": "09:00:08",
+      "who": "priya",
+      "text": "Could you review Dev's PR before the demo?"
+    },
+    {
+      "at": "09:00:13",
+      "who": "me",
+      "text": "On it."
+    },
+    {
+      "at": "09:00:15",
+      "who": "priya",
+      "text": "Between us, I got laid off from my last job and the loan is still killing me."
+    },
+    {
+      "at": "09:00:24",
+      "who": "me",
+      "text": "That's rough, I'm sorry."
+    },
+    {
+      "at": "09:00:28",
+      "who": "me",
+      "text": "I'll finish the investor update by 3pm."
+    },
+    {
+      "at": "09:00:33",
+      "who": "priya",
+      "text": "Should I book the flights for the offsite, or will you?"
+    },
+    {
+      "at": "09:00:39",
+      "who": "me",
+      "text": "Should I book them tonight? Let me think."
+    },
+    {
+      "at": "11:15:00",
+      "who": "me",
+      "text": "Actually I'll push the investor update to tomorrow morning."
+    },
+    {
+      "at": "11:20:00",
+      "who": "me",
+      "text": "My therapist thinks I should take more breaks."
+    },
+    {
+      "at": "15:00:00",
+      "who": "dev",
+      "text": "Quick one, the staging build is green again."
+    },
+    {
+      "at": "15:00:04",
+      "who": "me",
+      "text": "Nice."
+    },
+    {
+      "at": "15:00:09",
+      "who": "dev",
+      "text": "I'm heading out early tomorrow, my sister's wedding is on Saturday."
+    },
+    {
+      "at": "15:00:16",
+      "who": "me",
+      "text": "Congrats to her!"
+    },
+    {
+      "at": "15:00:24",
+      "who": "dev",
+      "text": "Thanks, see you Monday."
+    },
+    {
+      "at": "16:00:00",
+      "who": "priya",
+      "text": "Okay so the demo got moved and the client wants the dashboard first"
+    },
+    {
+      "at": "16:00:05",
+      "who": "priya",
+      "text": "and then they want the export flow and honestly I think we should cut the onboarding part"
+    },
+    {
+      "at": "16:00:11",
+      "who": "me",
+      "text": "Agreed, cut it."
+    },
+    {
+      "at": "16:00:13",
+      "who": "priya",
+      "text": "great so I'll tell them and we go with dashboard then export, see you"
+    },
+    {
+      "at": "18:10:00",
+      "who": "me",
+      "text": "I paid it."
+    },
+    {
+      "at": "18:20:00",
+      "who": "me",
+      "text": "I didn't water the plants yet."
+    },
+    {
+      "at": "20:00:00",
+      "who": "me",
+      "text": "Watered the plants."
+    }
+  ],
+  "events": [
+    {
+      "at": "12:00:00",
+      "kind": "pause_listening"
+    },
+    {
+      "at": "12:45:00",
+      "kind": "resume_listening"
+    }
+  ],
+  "truth": {
+    "ledger": [
+      {
+        "id": "maya",
+        "owner": "jordan",
+        "kind": "waiting_on",
+        "keys": [
+          "maya"
+        ],
+        "status": "open"
+      },
+      {
+        "id": "plants",
+        "owner": "me",
+        "kind": "commitment",
+        "keys": [
+          "plants"
+        ],
+        "status": "closed"
+      },
+      {
+        "id": "bill",
+        "owner": "me",
+        "kind": "commitment",
+        "keys": [
+          "electricity"
+        ],
+        "status": "closed"
+      },
+      {
+        "id": "car",
+        "owner": "me",
+        "kind": "commitment",
+        "counterparty": "spk_9",
+        "keys": [
+          "car"
+        ],
+        "status": "open"
+      },
+      {
+        "id": "keys",
+        "owner": "dev",
+        "kind": "waiting_on",
+        "keys": [
+          "api keys"
+        ],
+        "status": "open"
+      },
+      {
+        "id": "pr",
+        "owner": "me",
+        "kind": "commitment",
+        "counterparty": "priya",
+        "keys": [
+          "pr"
+        ],
+        "status": "open"
+      },
+      {
+        "id": "update",
+        "owner": "me",
+        "kind": "commitment",
+        "keys": [
+          "investor update"
+        ],
+        "status": "open"
+      },
+      {
+        "id": "tell",
+        "owner": "priya",
+        "kind": "waiting_on",
+        "keys": [
+          "tell them"
+        ],
+        "status": "open"
+      }
+    ],
+    "not_my_commitments": [
+      "sister",
+      "maya",
+      "station",
+      "yoga",
+      "show",
+      "flights",
+      "api keys",
+      "tell them"
+    ],
+    "mind": [
+      [
+        "wedding"
+      ]
+    ],
+    "forbidden_memory": [
+      "laid off",
+      "loan"
+    ],
+    "nudges": [
+      {
+        "id": "keys-overdue",
+        "kind": "contextual_loop",
+        "keys": [
+          "api keys"
+        ],
+        "earliest": "15:00:00",
+        "latest": "15:01:00"
+      }
+    ],
+    "quiet": [
+      {
+        "why": "Listening paused",
+        "from": "12:00:00",
+        "to": "12:45:00"
+      }
+    ]
+  }
+}
